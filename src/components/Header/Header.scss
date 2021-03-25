@@ -1,0 +1,124 @@
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 4rem;
+        transition: all .2s ease-out;
+
+        @media only screen and (max-width: 900px) {
+            padding: 1rem 2rem;
+        }
+
+        h1 {
+            color: black;
+            z-index: 100;
+        }
+
+        #hamburger {
+            font-size: 2.4rem;
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
+            display: none;
+            z-index: 100;
+
+            @media only screen and (max-width: 900px) {
+                display: block;
+            }
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all .3s ease-out;
+
+            @media only screen and (max-width: 900px) {
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: -100%;
+                flex-direction: column;
+                background-color: white;
+
+            }
+            
+            li {
+
+                @media only screen and (max-width: 900px) {
+                    width: 100%;
+                    margin-top: .9rem;
+                }
+
+                a {
+                    display: block;
+                    text-decoration: none;
+                    color: black;
+                    padding: .5rem .8rem;
+                    font-size: 1.1rem;
+                    transition: all .3s ease-out;
+
+                    @media only screen and (max-width: 900px) {
+                        font-size: 2rem;
+                    }
+                }
+
+                a:hover {
+                    background-color: rgba($color: #ffffff, $alpha: .3);
+                }
+            }
+
+            #search {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: .0rem .8rem;
+
+                @media only screen and (max-width: 900px) {
+                    justify-content: start;
+                }
+
+                input {
+                    padding: .3rem .3rem;
+                    border: .6px solid rgba($color: #000000, $alpha: .4);
+                    border-radius: 5px;
+                    font-size: 1.1rem;
+                    width: 0px;
+                    transition: all .4s ease-out;
+
+                    @media only screen and (max-width: 900px) {
+                        font-size: 2rem;
+                    }
+                }
+
+                input.active {
+                    width: 200px;
+                }
+
+                #icon {
+                    margin: 0rem .6rem;
+                    font-size: 1.5rem;
+                    cursor: pointer;
+
+                    @media only screen and (max-width: 900px) {
+                        font-size: 2rem;
+                    }
+                }
+
+                
+            }
+        }
+
+        ul.active {
+            left: 0%;
+        }
+    }
+}
+
