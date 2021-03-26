@@ -1,0 +1,78 @@
+
+#parallax {
+
+    .title {
+        z-index: 10;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        h1 {
+            color: white;
+            font-size: 4rem;
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
+        }
+
+        h2 {
+            color: white;
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
+        }
+    }
+
+    .images {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba($color: #000000, $alpha: 1.0);
+    
+        img {
+            position: absolute;
+            top: 0;
+            z-index: 0;
+        }
+    
+        #mountain3 {
+            opacity: .8;
+            right: 0;
+        }
+    
+        #mountain2 {
+            right: 0;
+        }
+    
+        #mountain1 {
+            right: 0;
+        }
+    
+        #mountain {
+            right: 0;
+        }
+    
+    }
+    
+    .blend{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        mix-blend-mode: overlay;
+    }
+
+    
+}
+
+
+

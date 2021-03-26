@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 // ICONS
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { FaSearch } from 'react-icons/fa';
+import { CgClose } from 'react-icons/cg';
 
 // STYLES
 import './Header.scss';
@@ -16,13 +17,13 @@ class Header extends React.Component {
         this.state = {
             searchTerm: '',
             navToggle: false,
-            searchToggle: false
+            searchToggle: false,
+            headerScrolled: false
         };
-
-        this.searchIcon = React.createRef();
 
         this.onHamburgerClick = this.onHamburgerClick.bind(this);
         this.onSearchClick = this.onSearchClick.bind(this);
+        this.handleScroll = this.handleScroll.bind(this);
     }
 
     onHamburgerClick() {
@@ -33,25 +34,51 @@ class Header extends React.Component {
         this.setState({ searchToggle: !this.state.searchToggle });
     }
 
-    componentDidMount() {
+    handleScroll() {
+        if (window.pageYOffset > 100) { 
+            this.setState({ headerScrolled: true }); 
+            window.removeEventListener('scroll', this.handleScroll);
+        } 
+    }
 
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll);
     }
 
     componentWillUnmount() {
-
+        window.removeEventListener('scroll', this.handleScroll);
     }
 
     render() {
         return (
             <>
                 <header>
-                    <nav>
-                        <h1>Sahiltepe Villalari</h1>
+                    <nav 
+                        className={
+                            this.state.headerScrolled ? 
+                            "scrolled" :
+                            ""
+                        }
+                    >
+                        
 
-                        <GiHamburgerMenu
-                            id="hamburger"
-                            onClick={this.onHamburgerClick}
-                        />
+                        <h1>
+                            <Link to="/">
+                                Sahiltepe Villalari
+                            </Link>
+                        </h1>
+
+                        {
+                            this.state.navToggle ?
+                            <CgClose
+                                id="nav-close"
+                                onClick={this.onHamburgerClick}
+                            /> :
+                            <GiHamburgerMenu
+                                id="nav-hamburger"
+                                onClick={this.onHamburgerClick}
+                            />
+                        }
 
                         <ul
                             className={
@@ -64,15 +91,18 @@ class Header extends React.Component {
                                 <Link to="sign-in">Sign In</Link>
                             </li>
                             <li>
-                                <Link to="sign-up">Sign Up</Link>
+                                <Link to="about">Announcements</Link>
                             </li>
                             <li>
-                                <Link to="about">About</Link>
+                                <Link to="contact">Votes</Link>
                             </li>
                             <li>
-                                <Link to="contact">Contact</Link>
+                                <Link to="contact">Surveys</Link>
                             </li>
-                            <li id="search">
+                            <li 
+                                id="search"
+                            >
+
                                 <input
                                     type="text"
                                     value={this.state.searchTerm}
@@ -89,6 +119,7 @@ class Header extends React.Component {
                                     id="icon"
                                     onClick={this.onSearchClick}
                                 />
+
                             </li>
                         </ul>
                     </nav>
