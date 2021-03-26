@@ -64,7 +64,7 @@ class Header extends React.Component {
 
                         <h1>
                             <Link to="/">
-                                Sahiltepe Villalari
+                                Sahiltepe Villaları
                             </Link>
                         </h1>
 
