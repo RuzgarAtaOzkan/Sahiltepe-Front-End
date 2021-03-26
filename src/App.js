@@ -21,6 +21,10 @@ class App extends React.Component {
         this.state = {}
     }
 
+    componentDidMount() {
+        console.clear();
+    }
+
     render() {
         return (
             <Provider store={store}>

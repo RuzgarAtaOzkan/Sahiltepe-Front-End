@@ -11,14 +11,6 @@ class HomePageContainer extends React.Component {
         this.state = {}
     }
 
-    componentDidMount() {
-
-    }
-
-    componentWillUnmount() {
-
-    }
-
     render() {
         return (
             <>
