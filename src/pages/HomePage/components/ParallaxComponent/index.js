@@ -1,11 +1,12 @@
 
+
 // NODE MODULES
 import React from 'react';
 
 // STYLES
-import './Home.scss';
+import './ParallaxComponent.scss';
 
-class Home extends React.Component {
+class ParallaxComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -68,4 +69,4 @@ class Home extends React.Component {
     }
 }
 
-export default Home;
+export default ParallaxComponent;

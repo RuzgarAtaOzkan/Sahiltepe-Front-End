@@ -9,7 +9,7 @@ import { FaSearch } from 'react-icons/fa';
 import { CgClose } from 'react-icons/cg';
 
 // STYLES
-import './Header.scss';
+import './HeaderComponent.scss';
 
 class Header extends React.Component {
     constructor(props) {
@@ -35,7 +35,7 @@ class Header extends React.Component {
     }
 
     handleScroll() {
-        if (window.pageYOffset > 100) { 
+        if (window.pageYOffset > 150) { 
             this.setState({ headerScrolled: true }); 
             window.removeEventListener('scroll', this.handleScroll);
         } 
