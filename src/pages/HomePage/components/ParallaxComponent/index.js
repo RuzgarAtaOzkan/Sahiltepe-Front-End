@@ -13,6 +13,8 @@ class ParallaxComponent extends React.Component {
             searchTerm: ''
         }
 
+        this.shadow = React.createRef();
+
         this.mountain3 = React.createRef();
         this.mountain2 = React.createRef();
         this.mountain1 = React.createRef();
@@ -28,13 +30,17 @@ class ParallaxComponent extends React.Component {
 
         const windowY = window.pageYOffset;
 
+
+        console.log(`${200 + (windowY * 0.5)}px`)
+        this.shadow.current.style.height = `${200 + (windowY * 0.5)}px`; 
+
         this.mountain2.current.style.top = `${-windowY * 0.5}px`;
-        this.mountain1.current.style.top = `${-windowY * 1.2}px`;
+        this.mountain1.current.style.top = `${-windowY * 0.9}px`;
 
         if (window.innerWidth < 900) {
             this.mountain.current.style.top = `${-windowY * 2.7}px`;
         } else {
-            this.mountain.current.style.top = `${-windowY * 2}px`;
+            this.mountain.current.style.top = `${-windowY * 1.2}px`;
         }
 
 
@@ -56,6 +62,11 @@ class ParallaxComponent extends React.Component {
                     <h2>Cennete Açılan Yeni Bir Kapı</h2>
                 </div>
 
+                <div 
+                    className="shadow"
+                    ref={this.shadow}
+                />
+
                 <div className="images">
                     <img ref={this.mountain3} id="mountain3" src="/media/parallax-mountain3.png" alt="Mountain" />
                     <img ref={this.mountain2} id="mountain2" src="/media/parallax-mountain2.png" alt="Mountain" />
@@ -64,6 +75,7 @@ class ParallaxComponent extends React.Component {
                 </div>
 
                 <div className="blend" />
+
             </section>
         );
     }

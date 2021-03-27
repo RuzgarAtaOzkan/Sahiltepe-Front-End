@@ -3,7 +3,8 @@
 import React from 'react'
 
 // COMPONENTS
-import ParallaxComponent from './components/ParallaxComponent';
+import Announcements from './components/AnnouncementsComponent';
+import Parallax from './components/ParallaxComponent';
 
 class HomePageContainer extends React.Component {
     constructor(props) {
@@ -14,7 +15,8 @@ class HomePageContainer extends React.Component {
     render() {
         return (
             <>
-                <ParallaxComponent />
+                <Parallax />
+                <Announcements />
             </>
         );
     }
