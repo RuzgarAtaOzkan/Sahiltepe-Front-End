@@ -94,7 +94,7 @@ class Header extends React.Component {
                                 <Link to="about">Announcements</Link>
                             </li>
                             <li>
-                                <Link to="contact">Votes</Link>
+                                <Link to="contact">Etkinlikler</Link>
                             </li>
                             <li>
                                 <Link to="contact">Surveys</Link>

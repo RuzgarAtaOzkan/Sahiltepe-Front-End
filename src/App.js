@@ -6,6 +6,8 @@ import { Provider } from 'react-redux';
 
 // PAGES
 import HomePage from './pages/HomePage';
+import SignInPage from './pages/SignInPage';
+import SignUpPage from './pages/SignUpPage';
 
 // COMPONENTS
 import Header from './components/HeaderComponent';
@@ -34,6 +36,8 @@ class App extends React.Component {
                     <main>
                         <Switch>
                             <Route path="/" exact component={HomePage} />
+                            <Route path="/sign-in" exact component={SignInPage} />
+                            <Route path="/sign-up" exact component={SignUpPage} />
                         </Switch>
                     </main>
                     <Footer />

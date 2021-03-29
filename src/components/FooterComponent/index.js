@@ -127,6 +127,10 @@ class FooterComponent extends React.Component {
                         <span id="rights"> @ 2020 All rights reserved. </span>
                             
                     </div>
+
+                    <div className="author">
+                        <span>Created by Mert Agca & Ruzgar Ata Ozkan.</span>
+                    </div>
                 </footer>
             </>
         );

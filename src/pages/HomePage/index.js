@@ -3,7 +3,7 @@
 import React from 'react'
 
 // COMPONENTS
-import Parallax from './components/ParallaxComponent';
+import Parallax from '../../components/ParallaxComponent';
 import IntroductionComponent from './components/IntroductionComponent';
 
 class HomePageContainer extends React.Component {

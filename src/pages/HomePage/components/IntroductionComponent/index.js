@@ -49,10 +49,9 @@ class IntroductionComponent extends React.Component {
 
     handleLoad() {
         const rect = this.boxes.current.getBoundingClientRect();
-        const decVal = (rect.top / 5);
+        const decVal = (rect.top / 3);
 
         const introTriggerOffset = (rect.top - decVal);
-        console.log(introTriggerOffset);
 
         this.setState({ introTriggerOffset });
 
@@ -63,7 +62,6 @@ class IntroductionComponent extends React.Component {
             window.removeEventListener('scroll', this.handleScroll);
             this.setState({ introScroll: true });
         }
-
     }
 
     componentDidMount() {

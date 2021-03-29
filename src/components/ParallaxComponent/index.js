@@ -37,14 +37,7 @@ class ParallaxComponent extends React.Component {
 
         this.mountain2.current.style.top = `${-windowY * 0.5}px`;
         this.mountain1.current.style.top = `${-windowY * 0.9}px`;
-
-        if (window.innerWidth < 900) {
-            this.mountain.current.style.top = `${-windowY * 2.7}px`;
-        } else {
-            this.mountain.current.style.top = `${-windowY * 1.2}px`;
-        }
-
-
+        this.mountain.current.style.top = `${-windowY * 1.2}px`;
     }
 
     explore() {
