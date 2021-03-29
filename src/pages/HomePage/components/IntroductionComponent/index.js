@@ -10,10 +10,10 @@ class IntroductionComponent extends React.Component {
         super(props);
         this.state = {
             _boxes: [ // temporary api
-                { title: 'Lorem Ipsum Dolor Sit Amet', img: 'https://images.pexels.com/photos/7174579/pexels-photo-7174579.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' },
-                { title: 'Lorem Ipsum Dolor Sit Amet', img: 'https://images.pexels.com/photos/7174579/pexels-photo-7174579.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' },
-                { title: 'Lorem Ipsum Dolor Sit Amet', img: 'https://images.pexels.com/photos/7174579/pexels-photo-7174579.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' },
-                { title: 'Lorem Ipsum Dolor Sit Amet', img: 'https://images.pexels.com/photos/7174579/pexels-photo-7174579.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' },
+                { title: 'Lorem Ipsum Dolor Sit Amet', img: 'https://images.pexels.com/photos/7121329/pexels-photo-7121329.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' },
+                { title: 'Lorem Ipsum Dolor Sit Amet', img: 'https://images.pexels.com/photos/7121329/pexels-photo-7121329.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' },
+                { title: 'Lorem Ipsum Dolor Sit Amet', img: 'https://images.pexels.com/photos/7121329/pexels-photo-7121329.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' },
+                { title: 'Lorem Ipsum Dolor Sit Amet', img: 'https://images.pexels.com/photos/7121329/pexels-photo-7121329.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' },
             ],
             introTriggerOffset: 0,
             introScroll: false
@@ -37,8 +37,8 @@ class IntroductionComponent extends React.Component {
         return boxes.map((box, index) => {
             return (
                 <div
-                    className={this.state.introScroll ? "box triggered" : "box"}
-                    key={box.id || index}
+                    className={this.state.introScroll ? "box" : "box"}
+                    key={index}
                 >
                     <img src={box.img} alt="Intro Information" />
                     <h2>{box.title}</h2>
@@ -50,11 +50,8 @@ class IntroductionComponent extends React.Component {
     handleLoad() {
         const rect = this.boxes.current.getBoundingClientRect();
         const decVal = (rect.top / 3);
-
         const introTriggerOffset = (rect.top - decVal);
-
         this.setState({ introTriggerOffset });
-
     }
 
     handleScroll() {
@@ -78,13 +75,16 @@ class IntroductionComponent extends React.Component {
         return (
             <>
                 <section id="introduction">
-
                     <div className="shadow" />
 
-                    <div ref={this.boxes} className="boxes">
+                    <h1>Sitemizde One Cikanlar</h1>
+
+                    <div 
+                        ref={this.boxes} 
+                        className="boxes"
+                    >
                         {this.renderIntroBoxes(this.state._boxes)}
                     </div>
-
                 </section>
             </>
         );

@@ -126,10 +126,10 @@ class AuthFormComponent extends React.Component {
 
     render() {
         return (
-            <>
+            <section id="auth-form">
                 <img src="https://www.pxwall.com/wp-content/uploads/2018/06/Wallpaper%20autumn,%20forest,%20mountain,%204k,%20Nature%20461537031.jpg" alt="Background Sea" />
                 {this.configForm(this.props.formType)}
-            </>
+            </section>
         );
     }
 }

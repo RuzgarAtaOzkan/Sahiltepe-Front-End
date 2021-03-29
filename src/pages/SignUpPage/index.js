@@ -12,7 +12,7 @@ class SignUpContainer extends React.Component {
     }
 
     componentDidMount() {
-
+        
     }
 
     componentWillUnmount() {
@@ -20,6 +20,7 @@ class SignUpContainer extends React.Component {
     }
 
     render() {
+        window.scrollTo(0, 0);
         return (
             <>
                 <AuthFormComponent formType="signUp" />

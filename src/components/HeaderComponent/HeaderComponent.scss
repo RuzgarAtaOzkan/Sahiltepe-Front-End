@@ -101,6 +101,14 @@ header {
                 a:hover {
                     background-color: rgba($color: #ffffff, $alpha: .2);
                 }
+
+                .dropdown {
+                    position: absolute;
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    flex-direction: column;
+                }
             }
 
             #search {

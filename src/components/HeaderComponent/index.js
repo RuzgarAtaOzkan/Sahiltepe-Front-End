@@ -1,7 +1,7 @@
 
 // NODE MODULES
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 // ICONS
 import { GiHamburgerMenu } from 'react-icons/gi';
@@ -18,11 +18,61 @@ class Header extends React.Component {
             searchTerm: '',
             navToggle: false,
             searchToggle: false,
-            headerScrolled: false
+            headerScrolled: false,
+
+            dropdown: null,
+
+            headerElements: [
+                { title: 'Giris Yap', path: '/sign-in', dropdown: false },
+                { 
+                    title: 'Duyurular', 
+                    path: '/announcements', 
+                    dropdown: [
+                        { title: 'Kat Malikleri Kurulu', path: '#' },
+                        { title: 'Yönetim Kurulu', path: '#' },
+                        { title: 'KMK Danışma Kurulu', path: '#' },
+                        { title: 'Tüm Duyurular', path: '#' }
+                    ] 
+                },
+                { 
+                    title: 'Etkinlikler', 
+                    path: '/legislation', 
+                    dropdown: [
+                        { title: 'Yönetim planı', path: '#' },
+                        { title: 'Kat Mülkiyeti Kanunu', path: '#' },
+                        { title: 'Medeni Kanun', path: '#' },
+                        { title: 'İstanbul İmar Yönetmeliği', path: '#' },
+                        { title: 'İçtihatlar', path: '#' }
+                    ] 
+                },
+                {
+                    title: 'Kararlar',
+                    path: '/decisions',
+                    dropdown: [
+                        { title: 'Yönetim planı', path: '#' },
+                        { title: 'Kat Mülkiyeti Kanunu', path: '#' },
+                        { title: 'Medeni Kanun', path: '#' },
+                        { title: 'İstanbul İmar Yönetmeliği', path: '#' },
+                        { title: 'İçtihatlar', path: '#' }
+                    ]
+                },
+                {
+                    title: 'Etkinlikler', 
+                    path: '/events', 
+                    dropdown: [
+                        { title: 'Oylamalar', path: '/votes' },
+                        { title: 'Anketler', path: '/surveys' }
+                    ] 
+                },
+
+            ],
+
         };
 
         this.onHamburgerClick = this.onHamburgerClick.bind(this);
         this.onSearchClick = this.onSearchClick.bind(this);
+        this.renderDropdown = this.renderDropdown.bind(this);
+        this.onMouseHeader = this.onMouseHeader.bind(this);
         this.handleScroll = this.handleScroll.bind(this);
     }
 
@@ -32,6 +82,69 @@ class Header extends React.Component {
 
     onSearchClick() {
         this.setState({ searchToggle: !this.state.searchToggle });
+    }
+
+    renderDropdown(dropdown) {
+        if (dropdown !== this.state.dropdown) {
+            return null;
+        }
+
+
+        const dropdownToRender = this.state.headerElements.find((item, index) => {
+            console.log(item);
+            if ((item.path.replace('/', '')) === this.state.dropdown) {
+                return item.dropdown;
+            }
+        });
+
+        if (!dropdownToRender) {
+            return null;
+        }
+        console.log(dropdownToRender);
+        return (
+
+            <ul className="dropdown">
+                {
+                    dropdownToRender?.map((item, index) => {
+                        return (
+                            <li
+                                key={item.id || index}
+                            >
+                                <Link to={item.path}>
+                                    {item.title}
+                                </Link>
+                            </li>
+                        );
+                    })
+                }
+            </ul>
+        );
+    }
+
+    renderHeaderElements(items) {
+        if (!items) {
+            return null;
+        }
+
+        return items.map((item, index) => {
+            const dropdown = item.path.replace('/', '');
+
+            return (
+                <li
+                    key={index}
+                    onMouseEnter={this.onMouseHeader}
+                    onMouseLeave={() => this.setState({ dropdown: null })}
+                >
+                    <Link to={item.path}>{item.title}</Link>
+                    {this.renderDropdown(dropdown)}
+                </li>
+            );
+        });
+    }
+
+    onMouseHeader(e) {
+        const pathname = e.target.pathname.replace('/', '').toString();
+        this.setState({ dropdown: pathname });
     }
 
     handleScroll() {
@@ -60,8 +173,6 @@ class Header extends React.Component {
                             ""
                         }
                     >
-                        
-
                         <h1>
                             <Link to="/">
                                 Sahiltepe Villaları
@@ -81,45 +192,28 @@ class Header extends React.Component {
                         }
 
                         <ul
-                            className={
-                                this.state.navToggle ?
-                                "active" :
-                                ""
-                            }
+                            className={this.state.navToggle ? "active" : ""}
                         >
+                            {this.renderHeaderElements(this.state.headerElements)}
                             <li>
-                                <Link to="sign-in">Sign In</Link>
-                            </li>
-                            <li>
-                                <Link to="about">Announcements</Link>
-                            </li>
-                            <li>
-                                <Link to="contact">Etkinlikler</Link>
-                            </li>
-                            <li>
-                                <Link to="contact">Surveys</Link>
-                            </li>
-                            <li 
-                                id="search"
-                            >
+                                <div id="search">
+                                    <input
+                                        type="text"
+                                        value={this.state.searchTerm}
+                                        onChange={(e) => this.setState({ searchTerm: e.target.value })}
+                                        placeholder="Search..."
+                                        className={
+                                            this.state.searchToggle ? 
+                                            "active" : 
+                                            ""
+                                        }
+                                    />
 
-                                <input
-                                    type="text"
-                                    value={this.state.searchTerm}
-                                    onChange={(e) => this.setState({ searchTerm: e.target.value })}
-                                    placeholder="Search..."
-                                    className={
-                                        this.state.searchToggle ? 
-                                        "active" : 
-                                        ""
-                                    }
-                                />
-
-                                <FaSearch
-                                    id="icon"
-                                    onClick={this.onSearchClick}
-                                />
-
+                                    <FaSearch
+                                        id="icon"
+                                        onClick={this.onSearchClick}
+                                    />
+                                </div>
                             </li>
                         </ul>
                     </nav>
@@ -129,4 +223,4 @@ class Header extends React.Component {
     }
 }
 
-export default Header;
+export default withRouter(Header);
