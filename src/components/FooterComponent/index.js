@@ -83,16 +83,32 @@ class FooterComponent extends React.Component {
 
                             <div className="social-container">
 
-                                <a>
+                                <a
+                                    href="https://www.facebook.com/uitwaaien6/"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
                                     <FaFacebookF />
                                 </a>
-                                <a>
+                                <a
+                                    href="https://www.facebook.com/uitwaaien6/"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
                                     <AiOutlineTwitter />
                                 </a>
-                                <a>
+                                <a
+                                    href="https://www.facebook.com/uitwaaien6/"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
                                     <AiOutlineInstagram />
                                 </a>
-                                <a>
+                                <a
+                                    href="https://www.facebook.com/uitwaaien6/"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
                                     <FaLinkedinIn />
                                 </a>
 

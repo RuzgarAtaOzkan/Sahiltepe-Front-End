@@ -1,7 +1,7 @@
 
 footer {
     width: 100%;
-    border: 1px solid red;
+    padding: 2rem 0 1rem 0;
     background-color: rgba($color: #202020, $alpha: 1.0);
     color: rgba($color: #d6d6d6, $alpha: 1.0);
 
@@ -18,13 +18,12 @@ footer {
         align-items: baseline;
 
         @media only screen and (max-width: 900px) {
-            justify-content: center;
             flex-direction: column;
             align-items: center;
         }
 
         .list.about-us {
-            width: 40%;
+            width: 30%;
 
             span {
                 line-height: 25px;
@@ -42,8 +41,8 @@ footer {
                 align-items: baseline;
 
                 a {
+                    color: white;
                     
-
                     svg {
                         transition: all .2s ease-out;
                         cursor: pointer;

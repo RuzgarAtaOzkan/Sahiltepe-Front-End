@@ -14,8 +14,15 @@ class IntroductionComponent extends React.Component {
                 { title: 'Lorem Ipsum Dolor Sit Amet', img: 'https://images.pexels.com/photos/7174579/pexels-photo-7174579.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' },
                 { title: 'Lorem Ipsum Dolor Sit Amet', img: 'https://images.pexels.com/photos/7174579/pexels-photo-7174579.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' },
                 { title: 'Lorem Ipsum Dolor Sit Amet', img: 'https://images.pexels.com/photos/7174579/pexels-photo-7174579.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' },
-            ]
+            ],
+            introTriggerOffset: 0,
+            introScroll: false
         }
+
+        this.boxes = React.createRef();
+        
+        this.handleLoad = this.handleLoad.bind(this);
+        this.handleScroll = this.handleScroll.bind(this);
     }
 
     renderIntroBoxes(boxes) {
@@ -30,7 +37,7 @@ class IntroductionComponent extends React.Component {
         return boxes.map((box, index) => {
             return (
                 <div
-                    className="box"
+                    className={this.state.introScroll ? "box triggered" : "box"}
                     key={box.id || index}
                 >
                     <img src={box.img} alt="Intro Information" />
@@ -40,12 +47,33 @@ class IntroductionComponent extends React.Component {
         });
     }
 
-    componentDidMount() {
+    handleLoad() {
+        const rect = this.boxes.current.getBoundingClientRect();
+        const decVal = (rect.top / 5);
+
+        const introTriggerOffset = (rect.top - decVal);
+        console.log(introTriggerOffset);
+
+        this.setState({ introTriggerOffset });
 
     }
 
-    componentWillUnmount() {
+    handleScroll() {
+        if (window.pageYOffset > this.state.introTriggerOffset) {
+            window.removeEventListener('scroll', this.handleScroll);
+            this.setState({ introScroll: true });
+        }
 
+    }
+
+    componentDidMount() {
+        window.addEventListener('load', this.handleLoad);
+        window.addEventListener('scroll', this.handleScroll);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('load', this.handleLoad);
+        window.removeEventListener('scroll', this.handleScroll);
     }
 
     render() {
@@ -55,7 +83,7 @@ class IntroductionComponent extends React.Component {
 
                     <div className="shadow" />
 
-                    <div className="boxes">
+                    <div ref={this.boxes} className="boxes">
                         {this.renderIntroBoxes(this.state._boxes)}
                     </div>
 

@@ -2,6 +2,7 @@
 #introduction {
     position: relative;
     background-color: white;
+    padding: 6rem 0rem;
 
     .shadow {
         height: 200px;
@@ -24,6 +25,8 @@
 
         }
 
+
+
         .box {
             display: flex;
             justify-content: center;
@@ -33,6 +36,8 @@
             transition: all .2s ease-out;
             margin: 1rem 1rem;
             width: 400px;
+            opacity: 0;
+            transition: all .5s ease-out;
 
             img {
                 width: 300px;
@@ -43,6 +48,10 @@
                 margin-top: 1rem;
                 width: 300px;
             }
+        }
+
+        .triggered {
+            opacity: 1;
         }
     }
 
