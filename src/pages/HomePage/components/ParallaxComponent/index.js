@@ -3,6 +3,9 @@
 // NODE MODULES
 import React from 'react';
 
+// SVG ICONS
+import { TiArrowSortedDown } from 'react-icons/ti';
+
 // STYLES
 import './ParallaxComponent.scss';
 
@@ -14,12 +17,12 @@ class ParallaxComponent extends React.Component {
         }
 
         this.shadow = React.createRef();
-
         this.mountain3 = React.createRef();
         this.mountain2 = React.createRef();
         this.mountain1 = React.createRef();
         this.mountain = React.createRef();
 
+        this.explore = this.explore.bind(this);
         this.handleScroll = this.handleScroll.bind(this);
     }
 
@@ -30,8 +33,6 @@ class ParallaxComponent extends React.Component {
 
         const windowY = window.pageYOffset;
 
-
-        console.log(`${200 + (windowY * 0.5)}px`)
         this.shadow.current.style.height = `${200 + (windowY * 0.5)}px`; 
 
         this.mountain2.current.style.top = `${-windowY * 0.5}px`;
@@ -46,6 +47,10 @@ class ParallaxComponent extends React.Component {
 
     }
 
+    explore() {
+        window.scrollTo(0, window.innerHeight);
+    }
+
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
     }
@@ -57,9 +62,18 @@ class ParallaxComponent extends React.Component {
     render() {
         return (
             <section id="parallax">
+
                 <div className="title">
                     <h1>Sahiltepe Villaları</h1>
                     <h2>Cennete Açılan Yeni Bir Kapı</h2>
+                </div>
+
+                <div
+                    className="explore"
+                    onClick={this.explore}
+                >
+                    <h2>Explore</h2>
+                    <TiArrowSortedDown id="down-arrow" />
                 </div>
 
                 <div 
@@ -71,7 +85,7 @@ class ParallaxComponent extends React.Component {
                     <img ref={this.mountain3} id="mountain3" src="/media/parallax-mountain3.png" alt="Mountain" />
                     <img ref={this.mountain2} id="mountain2" src="/media/parallax-mountain2.png" alt="Mountain" />
                     <img ref={this.mountain1} id="mountain1" src="/media/parallax-mountain1.png" alt="Mountain" />
-                    <img ref={this.mountain} id="mountain" src="/media/parallax-mountain.png" alt="Mountain" />
+                    <img ref={this.mountain} id="mountain" src="/media/parallax-mountain.png" alt="Cliff" />
                 </div>
 
                 <div className="blend" />

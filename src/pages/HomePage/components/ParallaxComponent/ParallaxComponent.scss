@@ -80,6 +80,24 @@
         background-color: rgba($color: #7a98eb, $alpha: .3);
         mix-blend-mode: overlay;
     }
+
+    .explore {
+        color: white;
+        position: absolute;
+        z-index: 100;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        bottom: 5%;
+        cursor: pointer;
+
+        #down-arrow {
+            margin: .5rem 0rem;
+            font-size: 2rem;
+        }
+    }
     
 }
 

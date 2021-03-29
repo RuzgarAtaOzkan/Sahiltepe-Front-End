@@ -1,0 +1,51 @@
+
+#introduction {
+    position: relative;
+    background-color: white;
+
+    .shadow {
+        height: 200px;
+        z-index: 10;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        background: linear-gradient(to bottom, #151515, transparent);
+    }
+
+    .boxes {
+        padding-top: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        transition: all .2s ease-out;
+
+        @media only screen and (max-width: 900px) {
+
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            transition: all .2s ease-out;
+            margin: 1rem 1rem;
+            width: 400px;
+
+            img {
+                width: 300px;
+                border-radius: 10px;
+            }
+
+            h2 {
+                margin-top: 1rem;
+                width: 300px;
+            }
+        }
+    }
+
+}
+
+

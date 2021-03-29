@@ -9,6 +9,7 @@ import HomePage from './pages/HomePage';
 
 // COMPONENTS
 import Header from './components/HeaderComponent';
+import Footer from './components/FooterComponent';
 
 // STYLES
 import './styles/App.scss';
@@ -35,6 +36,7 @@ class App extends React.Component {
                             <Route path="/" exact component={HomePage} />
                         </Switch>
                     </main>
+                    <Footer />
                 </Router>
             </Provider>
         );
