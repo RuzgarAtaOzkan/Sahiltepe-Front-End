@@ -90,7 +90,6 @@ header {
                     color: white;
                     padding: .5rem 1rem;
                     font-size: 1.1rem;
-                    transition: all .3s ease-out;
 
                     @media only screen and (max-width: 900px) {
                         font-size: 2rem;
@@ -99,15 +98,26 @@ header {
                 }
 
                 a:hover {
-                    background-color: rgba($color: #ffffff, $alpha: .2);
+                    background-color: rgba($color: #ffffff, $alpha: .3);
                 }
 
                 .dropdown {
                     position: absolute;
                     display: flex;
-                    justify-content: start;
-                    align-items: center;
                     flex-direction: column;
+                    background-color: rgba($color: #000000, $alpha: 1);
+
+                    @media only screen and (max-width: 900px) {
+                        
+                    }
+
+                    li {
+                        width: 100%;
+
+                        a {
+                            display: block;
+                        }
+                    }
                 }
             }
 
@@ -169,7 +179,7 @@ header {
 
     nav.scrolled {
         padding: 1.5rem 4rem;
-        background-color: rgba($color: #000000, $alpha: .8);
+        background-color: rgba($color: #000000, $alpha: 1);
     }
 }
 

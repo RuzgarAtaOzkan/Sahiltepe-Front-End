@@ -28,7 +28,7 @@ class Header extends React.Component {
                     title: 'Duyurular', 
                     path: '/announcements', 
                     dropdown: [
-                        { title: 'Kat Malikleri Kurulu', path: '#' },
+                        { title: 'Kat Malikleri Kurulu', path: '/sarmaz' },
                         { title: 'Yönetim Kurulu', path: '#' },
                         { title: 'KMK Danışma Kurulu', path: '#' },
                         { title: 'Tüm Duyurular', path: '#' }
@@ -89,36 +89,38 @@ class Header extends React.Component {
             return null;
         }
 
-
         const dropdownToRender = this.state.headerElements.find((item, index) => {
-            console.log(item);
             if ((item.path.replace('/', '')) === this.state.dropdown) {
-                return item.dropdown;
+                return item;
             }
         });
 
-        if (!dropdownToRender) {
+        if (!dropdownToRender.dropdown) {
             return null;
         }
-        console.log(dropdownToRender);
-        return (
 
-            <ul className="dropdown">
-                {
-                    dropdownToRender?.map((item, index) => {
-                        return (
-                            <li
-                                key={item.id || index}
-                            >
-                                <Link to={item.path}>
-                                    {item.title}
-                                </Link>
-                            </li>
-                        );
-                    })
-                }
-            </ul>
-        );
+        console.log(dropdownToRender.dropdown);
+
+        if (dropdownToRender.dropdown) {
+            return (
+                <ul className="dropdown">
+                    {
+                        dropdownToRender?.dropdown?.map((item, index) => {
+                            return (
+                                <li
+                                    key={item.id || index}
+                                >
+                                    <Link to={item.path}>
+                                        {item.title}
+                                    </Link>
+                                </li>
+                            );
+                        })
+                    }
+                </ul>
+            );
+        }
+
     }
 
     renderHeaderElements(items) {
