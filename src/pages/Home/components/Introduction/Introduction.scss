@@ -2,15 +2,19 @@
 #introduction {
     position: relative;
     background-color: white;
-    padding: 6rem 0rem;
+    padding: 12rem 0rem;
 
     .shadow {
-        height: 200px;
+        height: 300px;
         z-index: 10;
         width: 100%;
         position: absolute;
         top: 0;
         background: linear-gradient(to bottom, #151515, transparent);
+    }
+
+    h1 {
+        text-align: center;
     }
 
     .boxes {

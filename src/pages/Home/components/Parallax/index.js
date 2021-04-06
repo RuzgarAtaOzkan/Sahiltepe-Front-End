@@ -7,9 +7,9 @@ import React from 'react';
 import { TiArrowSortedDown } from 'react-icons/ti';
 
 // STYLES
-import './ParallaxComponent.scss';
+import './Parallax.scss';
 
-class ParallaxComponent extends React.Component {
+class Parallax extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -88,4 +88,4 @@ class ParallaxComponent extends React.Component {
     }
 }
 
-export default ParallaxComponent;
+export default Parallax;

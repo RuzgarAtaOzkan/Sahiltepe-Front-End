@@ -9,7 +9,7 @@ import { FaSearch } from 'react-icons/fa';
 import { CgClose } from 'react-icons/cg';
 
 // STYLES
-import './HeaderComponent.scss';
+import './Header.scss';
 
 class Header extends React.Component {
     constructor(props) {
@@ -25,43 +25,50 @@ class Header extends React.Component {
             headerElements: [
                 { title: 'Giris Yap', path: '/sign-in', dropdown: false },
                 { 
-                    title: 'Duyurular', 
-                    path: '/announcements', 
+                    title: 'Tanitim', 
+                    path: '/introduction', 
                     dropdown: [
-                        { title: 'Kat Malikleri Kurulu', path: '/sarmaz' },
-                        { title: 'Yönetim Kurulu', path: '#' },
-                        { title: 'KMK Danışma Kurulu', path: '#' },
-                        { title: 'Tüm Duyurular', path: '#' }
+                        { title: 'Sahiltepe Hakkında', path: '#about' },
+                        { title: 'Resimler', path: '#images' },
+                        { title: 'Videolar', path: '#videos' }
                     ] 
                 },
                 { 
-                    title: 'Etkinlikler', 
+                    title: 'Duyurular', 
+                    path: '/announcements', 
+                    dropdown: [
+                        { title: 'Kat Malikleri Kurulu', path: '#floor-owners-board' },
+                        { title: 'Yönetim Kurulu', path: '#board-of-directors' },
+                        { title: 'KMK Danışma Kurulu', path: '#floor-owners-board-advisory-board' },
+                        { title: 'Tüm Duyurular', path: '#all-announcements' }
+                    ] 
+                },
+                { 
+                    title: 'Mevzuat', 
                     path: '/legislation', 
                     dropdown: [
-                        { title: 'Yönetim planı', path: '#' },
-                        { title: 'Kat Mülkiyeti Kanunu', path: '#' },
-                        { title: 'Medeni Kanun', path: '#' },
-                        { title: 'İstanbul İmar Yönetmeliği', path: '#' },
-                        { title: 'İçtihatlar', path: '#' }
+                        { title: 'Yönetim planı', path: '#managemenet-plan' },
+                        { title: 'Kat Mülkiyeti Kanunu', path: '#floor-ownership-law' },
+                        { title: 'Medeni Kanun', path: '#civil-law' },
+                        { title: 'İstanbul İmar Yönetmeliği', path: '#istanbul-zoning-regulation' },
+                        { title: 'İçtihatlar', path: '#jurisprudence' }
                     ] 
                 },
                 {
                     title: 'Kararlar',
                     path: '/decisions',
                     dropdown: [
-                        { title: 'Yönetim planı', path: '#' },
-                        { title: 'Kat Mülkiyeti Kanunu', path: '#' },
-                        { title: 'Medeni Kanun', path: '#' },
-                        { title: 'İstanbul İmar Yönetmeliği', path: '#' },
-                        { title: 'İçtihatlar', path: '#' }
+                        { title: 'Kat Malikleri Kurulu', path: '#floor-owners-board' },
+                        { title: 'Yönetim Kurulu', path: '#board-of-directors' },
+                        { title: 'Tüm kararlar', path: '#all-decisions' }
                     ]
                 },
                 {
                     title: 'Etkinlikler', 
                     path: '/events', 
                     dropdown: [
-                        { title: 'Oylamalar', path: '/votes' },
-                        { title: 'Anketler', path: '/surveys' }
+                        { title: 'Oylamalar', path: '#votes' },
+                        { title: 'Anketler', path: '#surveys' }
                     ] 
                 },
 
@@ -84,6 +91,18 @@ class Header extends React.Component {
         this.setState({ searchToggle: !this.state.searchToggle });
     }
 
+    onMouseHeader(e) {
+        const pathname = e.target.pathname.replace('/', '').toString();
+        this.setState({ dropdown: pathname });
+    }
+
+    handleScroll() {
+        if (window.pageYOffset > 150) { 
+            this.setState({ headerScrolled: true }); 
+            window.removeEventListener('scroll', this.handleScroll);
+        } 
+    }
+
     renderDropdown(dropdown) {
         if (dropdown !== this.state.dropdown) {
             return null;
@@ -99,28 +118,21 @@ class Header extends React.Component {
             return null;
         }
 
-        console.log(dropdownToRender.dropdown);
-
-        if (dropdownToRender.dropdown) {
-            return (
-                <ul className="dropdown">
-                    {
-                        dropdownToRender?.dropdown?.map((item, index) => {
-                            return (
-                                <li
-                                    key={item.id || index}
-                                >
-                                    <Link to={item.path}>
-                                        {item.title}
-                                    </Link>
-                                </li>
-                            );
-                        })
-                    }
-                </ul>
-            );
-        }
-
+        return (
+            <ul className="dropdown">
+                {
+                    dropdownToRender?.dropdown?.map((item, index) => {
+                        return (
+                            <li key={index}>
+                                <Link to={`${dropdownToRender.path}${item.path}`}>
+                                    {item.title}
+                                </Link>
+                            </li>
+                        );
+                    })
+                }
+            </ul>
+        );
     }
 
     renderHeaderElements(items) {
@@ -142,18 +154,6 @@ class Header extends React.Component {
                 </li>
             );
         });
-    }
-
-    onMouseHeader(e) {
-        const pathname = e.target.pathname.replace('/', '').toString();
-        this.setState({ dropdown: pathname });
-    }
-
-    handleScroll() {
-        if (window.pageYOffset > 150) { 
-            this.setState({ headerScrolled: true }); 
-            window.removeEventListener('scroll', this.handleScroll);
-        } 
     }
 
     componentDidMount() {
@@ -197,6 +197,7 @@ class Header extends React.Component {
                             className={this.state.navToggle ? "active" : ""}
                         >
                             {this.renderHeaderElements(this.state.headerElements)}
+
                             <li>
                                 <div id="search">
                                     <input

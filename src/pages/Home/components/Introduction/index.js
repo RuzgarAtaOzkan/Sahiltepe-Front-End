@@ -3,9 +3,9 @@
 import React from 'react';
 
 // STYLES
-import './IntroductionComponent.scss';
+import './Introduction.scss';
 
-class IntroductionComponent extends React.Component {
+class Introduction extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -91,5 +91,5 @@ class IntroductionComponent extends React.Component {
     }
 }
 
-export default IntroductionComponent;
+export default Introduction;
 

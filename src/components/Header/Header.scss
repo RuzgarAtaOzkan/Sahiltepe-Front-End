@@ -4,7 +4,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 998;
 
     nav {
         display: flex;
@@ -74,7 +74,6 @@ header {
                 left: -100%;
                 flex-direction: column;
                 background-color: white;
-                opacity: .8;
             }
             
             li {
@@ -104,18 +103,19 @@ header {
                 .dropdown {
                     position: absolute;
                     display: flex;
+                    align-items: center;
                     flex-direction: column;
                     background-color: rgba($color: #000000, $alpha: 1);
-
-                    @media only screen and (max-width: 900px) {
-                        
-                    }
 
                     li {
                         width: 100%;
 
                         a {
                             display: block;
+
+                            @media only screen and (max-width: 900px) {
+                                color: black;
+                            }
                         }
                     }
                 }

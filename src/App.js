@@ -5,13 +5,13 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 // PAGES
-import HomePage from './pages/HomePage';
-import SignInPage from './pages/SignInPage';
-import SignUpPage from './pages/SignUpPage';
+import Home from './pages/Home';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
 
 // COMPONENTS
-import Header from './components/HeaderComponent';
-import Footer from './components/FooterComponent';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 // STYLES
 import './styles/App.scss';
@@ -35,9 +35,9 @@ class App extends React.Component {
                     <Header />
                     <main>
                         <Switch>
-                            <Route path="/" exact component={HomePage} />
-                            <Route path="/sign-in" exact component={SignInPage} />
-                            <Route path="/sign-up" exact component={SignUpPage} />
+                            <Route path="/" exact component={Home} />
+                            <Route path="/sign-in" exact component={SignIn} />
+                            <Route path="/sign-up" exact component={SignUp} />
                         </Switch>
                     </main>
                     <Footer />

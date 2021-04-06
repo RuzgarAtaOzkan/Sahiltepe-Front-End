@@ -6,14 +6,15 @@ import { Link } from 'react-router-dom';
 // STYLES
 import './AuthForm.scss';
 
-class AuthFormComponent extends React.Component {
+class AuthForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             email: '',
             username: '',
             password: '',
-            passwordVerify: ''
+            passwordVerify: '',
+            rememberMe: false
         }
     }
 
@@ -84,18 +85,23 @@ class AuthFormComponent extends React.Component {
 
                     <input 
                         type="password" 
-                        placeholder="Password"
+                        placeholder="Password Verify"
                         value={this.state.passwordVerify}
                         onChange={(e) => this.setState({ passwordVerify: e.target.value })}
                     />
 
-                    <button>SIGN UP</button>
+                    <button
+                        onClick={() => console.log('fdsfd')}
+                    >
+                        SIGN UP
+                    </button>
 
                     <div className="config">
                         <div className="remember-me">
                             <input type="checkbox" />
                             <span>Remember Me</span>
                         </div>
+
                         <Link>Forgot Password</Link>
                     </div>
                 </div>
@@ -112,7 +118,7 @@ class AuthFormComponent extends React.Component {
             case 'signUp':
                 return this.renderSignUp();
             default:
-                return <h1>Empty Form</h1>;
+                return <h1>Form Type Prop is not Specified!</h1>;
         }
     }
 
@@ -134,5 +140,5 @@ class AuthFormComponent extends React.Component {
     }
 }
 
-export default AuthFormComponent;
+export default AuthForm;
 

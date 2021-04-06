@@ -15,9 +15,9 @@ import {
 } from 'react-icons/ai';
 
 // STYLES
-import './FooterComponent.scss';
+import './Footer.scss';
 
-class FooterComponent extends React.Component {
+class Footer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {}
@@ -82,20 +82,19 @@ class FooterComponent extends React.Component {
                             <h3>FOLLOW US</h3>
 
                             <div className="social-container">
-
-                                <a
-                                    href="https://www.facebook.com/uitwaaien6/"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    <FaFacebookF />
-                                </a>
                                 <a
                                     href="https://www.facebook.com/uitwaaien6/"
                                     target="_blank"
                                     rel="noreferrer"
                                 >
                                     <AiOutlineTwitter />
+                                </a>
+                                <a
+                                    href="https://www.facebook.com/uitwaaien6/"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    <FaFacebookF />
                                 </a>
                                 <a
                                     href="https://www.facebook.com/uitwaaien6/"
@@ -111,21 +110,17 @@ class FooterComponent extends React.Component {
                                 >
                                     <FaLinkedinIn />
                                 </a>
-
                             </div>
-                            
                         </div>
                     </div>
 
                     <div className="bottom">
-                        
                         <Link>Privacy Policy</Link>
                         <span> | </span>
                         <Link>Terms & Conditions</Link>
                         <span> | </span>
                         <Link>Cookies</Link>
-                        <span id="rights"> @ 2020 All rights reserved. </span>
-                            
+                        <span id="rights"> @ {new Date().getFullYear().toString()} All rights reserved. </span>
                     </div>
 
                     <div className="author">
@@ -137,5 +132,5 @@ class FooterComponent extends React.Component {
     }
 }
 
-export default FooterComponent;
+export default Footer;
 

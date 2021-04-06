@@ -1,18 +1,19 @@
 
+
 // MODULES
 import React from 'react'
 
 // COMPONENTS
-import AuthFormComponent from '../../components/AuthFormComponent';
+import AuthForm from '../../components/AuthForm';
 
-class SignUpContainer extends React.Component {
+class SignIn extends React.Component {
     constructor(props) {
         super(props);
         this.state = {}
     }
 
     componentDidMount() {
-        
+        window.scrollTo(0, 0);
     }
 
     componentWillUnmount() {
@@ -20,13 +21,15 @@ class SignUpContainer extends React.Component {
     }
 
     render() {
-        window.scrollTo(0, 0);
         return (
             <>
-                <AuthFormComponent formType="signUp" />
+                <AuthForm 
+                    formType="signIn" 
+                />
             </>
         );
     }
 }
 
-export default SignUpContainer;
+export default SignIn;
+

@@ -18,14 +18,20 @@ footer {
         display: flex;
         justify-content: space-evenly;
         align-items: baseline;
+        transition: all .2s ease-out;
 
         @media only screen and (max-width: 900px) {
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
+            padding: 0rem 3rem;
         }
 
         .list.about-us {
             width: 30%;
+
+            @media only screen and (max-width: 900px) {
+                width: 80%;
+            }
 
             span {
                 line-height: 25px;
@@ -35,12 +41,15 @@ footer {
         .list.social {
             width: 120px;
 
+            @media only screen and (max-width: 900px) {
+                width: auto;
+            }
+
             .social-container {
 
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
-                align-items: baseline;
 
                 a {
                     color: white;

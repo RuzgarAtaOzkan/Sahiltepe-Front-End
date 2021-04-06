@@ -1,5 +1,8 @@
 
 #auth-form {
+
+    z-index: 100;
+
     img {
         position: fixed;
         top: 0;
@@ -18,7 +21,7 @@
         align-items: center;
         flex-direction: column;
         border-radius: 6px;
-        background-color: rgba($color: #000000, $alpha: .5);
+        background-color: rgba($color: #000000, $alpha: .6);
         padding: 5rem;
         z-index: 100;
         margin: 14rem auto;
@@ -78,6 +81,7 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                cursor: pointer;
     
                 input {
                     width: 30px;
