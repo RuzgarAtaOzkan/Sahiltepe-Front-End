@@ -5,6 +5,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 998;
+    background-color:rgb(161, 64, 19);
 
     nav {
         display: flex;
@@ -111,7 +112,7 @@ header {
                     display: flex;
                     align-items: center;
                     flex-direction: column;
-                    background-color: #000000;
+                    background-color:rgb(161, 64, 19);
 
                     li {
                         width: 100%;
@@ -145,7 +146,7 @@ header {
                     color: white;
                     width: 0px;
                     transition: all .4s ease-out;
-                    background: transparent;
+                    background-color: rgb(168, 168, 168);
 
                     @media only screen and (max-width: 900px) {
                         font-size: 2rem;
@@ -154,8 +155,7 @@ header {
 
                 input.active {
                     width: 200px;
-                    background: transparent;
-
+                    border: none;
                     @media only screen and (max-width: 900px) {
                         color: black;
                     }
@@ -185,7 +185,8 @@ header {
 
     nav.scrolled {
         padding: 1.5rem 4rem;
-        background-color: rgba($color: #000000, $alpha: 1);
+
     }
 }
 
+ //background-color: rgba($color: #000000, $alpha: 1);

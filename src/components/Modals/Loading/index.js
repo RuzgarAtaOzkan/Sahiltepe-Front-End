@@ -10,9 +10,7 @@ import './Loading.scss';
 class Loading extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            blurring: false
-        };
+        this.state = {};
 
         this.blur = React.createRef();
 
@@ -26,16 +24,15 @@ class Loading extends React.Component {
             return null;
         }
 
-        let blur = 0;
+        let blur = .5;
 
         this.blurIntervalId = setInterval(() => {
             blur = blur + .5;
 
-            if (blur > 2.5) {
+            if (blur > 4) {
                 return clearInterval(this.blurIntervalId);
             }
 
-            console.log(blur);
             if (this.blur.current) {
                 this.blur.current.style.backdropFilter = `blur(${blur}px)`;
             }
@@ -55,9 +52,13 @@ class Loading extends React.Component {
     }
 
     onScroll(e) {
-        if (this.blur.current) {
+
+        try {
             this.blur.current.style.top = window.pageYOffset + 'px';
+        } catch (error) {
+            
         }
+
     }
 
     componentDidMount() {

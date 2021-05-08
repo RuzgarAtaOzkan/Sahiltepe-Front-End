@@ -2,6 +2,7 @@
 // NODE MODULES
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 // ICONS
 import { GiHamburgerMenu } from 'react-icons/gi';
@@ -21,7 +22,6 @@ class Header extends React.Component {
             headerScrolled: false,
             dropdown: null,
             headerElements: [
-                { title: 'Giris Yap', path: '/sign-in', dropdown: false },
                 { 
                     title: 'Tanitim', 
                     path: '/introduction', 
@@ -199,6 +199,16 @@ class Header extends React.Component {
                         <ul
                             className={this.state.navToggle ? "active" : ""}
                         >
+                            {
+                                this.props.user ? 
+                                <li>
+                                    <Link to="profile">Hesabim</Link>
+                                </li> :
+                                <li>
+                                    <Link to="sign-in">Giris Yap</Link>
+                                </li>
+                            }
+
                             {this.renderHeaderElements(this.state.headerElements)}
 
                             <li>
@@ -229,4 +239,10 @@ class Header extends React.Component {
     }
 }
 
-export default withRouter(Header);
+function mapStateToProps(state) {
+    return {
+        user: state.user.user
+    }
+}
+
+export default connect(mapStateToProps, null)(withRouter(Header));
