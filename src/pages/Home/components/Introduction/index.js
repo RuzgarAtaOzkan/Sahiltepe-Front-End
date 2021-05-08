@@ -37,7 +37,7 @@ class Introduction extends React.Component {
         return boxes.map((box, index) => {
             return (
                 <div
-                    className={this.state.introScroll ? "box" : "box"}
+                    className="box"
                     key={index}
                 >
                     <img src={box.img} alt="Intro Information" />
@@ -55,6 +55,7 @@ class Introduction extends React.Component {
     }
 
     handleScroll() {
+        console.log(window.pageYOffset);
         if (window.pageYOffset > this.state.introTriggerOffset) {
             window.removeEventListener('scroll', this.handleScroll);
             this.setState({ introScroll: true });
@@ -76,6 +77,9 @@ class Introduction extends React.Component {
             <>
                 <section id="introduction">
                     <div className="shadow" />
+
+                    <img className="sunset" src="/media/sunset-mountain.jpeg" alt="Sunset Mountain" />
+                    <div className="overlay"></div>
 
                     <h1>Sitemizde One Cikanlar</h1>
 

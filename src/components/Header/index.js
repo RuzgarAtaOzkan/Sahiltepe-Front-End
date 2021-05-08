@@ -19,9 +19,7 @@ class Header extends React.Component {
             navToggle: false,
             searchToggle: false,
             headerScrolled: false,
-
             dropdown: null,
-
             headerElements: [
                 { title: 'Giris Yap', path: '/sign-in', dropdown: false },
                 { 
@@ -73,7 +71,6 @@ class Header extends React.Component {
                 },
 
             ],
-
         };
 
         this.onHamburgerClick = this.onHamburgerClick.bind(this);
@@ -92,7 +89,7 @@ class Header extends React.Component {
     }
 
     onMouseHeader(e) {
-        const pathname = e.target.pathname.replace('/', '').toString();
+        const pathname = e.target.pathname.replace('/', '');
         this.setState({ dropdown: pathname });
     }
 
@@ -109,12 +106,14 @@ class Header extends React.Component {
         }
 
         const dropdownToRender = this.state.headerElements.find((item, index) => {
-            if ((item.path.replace('/', '')) === this.state.dropdown) {
+            if ((item && item.path.replace('/', '')) === this.state.dropdown) {
                 return item;
+            } else { 
+                return null;
             }
         });
 
-        if (!dropdownToRender.dropdown) {
+        if (!dropdownToRender || !dropdownToRender.dropdown) {
             return null;
         }
 
@@ -123,7 +122,10 @@ class Header extends React.Component {
                 {
                     dropdownToRender?.dropdown?.map((item, index) => {
                         return (
-                            <li key={index}>
+                            <li 
+                                key={index}
+                                onClick={() => this.setState({ navToggle: false })}
+                            >
                                 <Link to={`${dropdownToRender.path}${item.path}`}>
                                     {item.title}
                                 </Link>
@@ -146,6 +148,7 @@ class Header extends React.Component {
             return (
                 <li
                     key={index}
+                    onClick={() => this.setState({ navToggle: false })}
                     onMouseEnter={this.onMouseHeader}
                     onMouseLeave={() => this.setState({ dropdown: null })}
                 >

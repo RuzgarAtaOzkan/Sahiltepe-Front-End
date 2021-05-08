@@ -24,7 +24,7 @@ class SignIn extends React.Component {
         return (
             <>
                 <AuthForm 
-                    formType="signIn" 
+                    formType="signin" 
                 />
             </>
         );

@@ -35,7 +35,9 @@ class Footer extends React.Component {
         return (
             <>
                 <footer>
-                    <h1>Sahiltepe Villaları</h1>
+                    <h1>
+                        <Link to="/">Sahiltepe Villaları</Link>
+                    </h1>
 
                     <div className="lists">
                         <div className="list about-us">
@@ -83,28 +85,28 @@ class Footer extends React.Component {
 
                             <div className="social-container">
                                 <a
-                                    href="https://www.facebook.com/uitwaaien6/"
+                                    href="https://www.twitter.com/ruzgarataozkan"
                                     target="_blank"
                                     rel="noreferrer"
                                 >
                                     <AiOutlineTwitter />
                                 </a>
                                 <a
-                                    href="https://www.facebook.com/uitwaaien6/"
+                                    href="https://www.facebook.com/ozkanruzgarata/"
                                     target="_blank"
                                     rel="noreferrer"
                                 >
                                     <FaFacebookF />
                                 </a>
                                 <a
-                                    href="https://www.facebook.com/uitwaaien6/"
+                                    href="https://www.instagram.com/ruzgarataozkan"
                                     target="_blank"
                                     rel="noreferrer"
                                 >
                                     <AiOutlineInstagram />
                                 </a>
                                 <a
-                                    href="https://www.facebook.com/uitwaaien6/"
+                                    href="https://www.linkedin.com/in/ruzgarataozkan/"
                                     target="_blank"
                                     rel="noreferrer"
                                 >

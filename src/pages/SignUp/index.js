@@ -23,7 +23,7 @@ class SignUp extends React.Component {
         return (
             <>
                 <AuthForm 
-                    formType="signUp" 
+                    formType="signup" 
                 />
             </>
         );

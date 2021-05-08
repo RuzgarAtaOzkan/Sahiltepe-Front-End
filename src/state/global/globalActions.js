@@ -1,21 +1,31 @@
 
 // TYPES
-export const SET_LANG = 'SET_LANG';
+const SET_LANG = 'SET_LANG';
+const SET_LOADING = 'SET_LOADING';
 
 // ACTIONS
-export function setLangAction(payload) {
+function langAction(payload) {
     return {
         type: SET_LANG,
         payload
     }
 }
 
+function loading(payload) {
+    return {
+        type: SET_LOADING,
+        payload
+    }
+}
+
 const types = {
-    SET_LANG
+    SET_LANG,
+    SET_LOADING
 }
 
 const actions = {
-    setLangAction
+    langAction,
+    loading
 }
 
 const userActions = {

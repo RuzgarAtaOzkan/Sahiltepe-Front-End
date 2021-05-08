@@ -3,7 +3,7 @@ footer {
     position: relative;
     width: 100%;
     padding: 2rem 0 1rem 0;
-    background-color: rgba($color: #202020, $alpha: 1.0);
+    background-color: rgba($color: #1a1a1a, $alpha: 1.0);
     color: rgba($color: #d6d6d6, $alpha: 1.0);
 
     h1 {
@@ -11,6 +11,11 @@ footer {
         text-align: center;
         margin: 4rem 0rem;
         font-family: 'Dancing Script', cursive;
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
     }
 
     .lists {
@@ -46,10 +51,9 @@ footer {
             }
 
             .social-container {
-
                 display: flex;
                 flex-wrap: wrap;
-                justify-content: center;
+                justify-content: flex-start;
 
                 a {
                     color: white;
@@ -65,9 +69,7 @@ footer {
                         color: #727272;
                     }
                 }
-
             }
-
         }
 
         .list {
@@ -128,9 +130,6 @@ footer {
             color: rgba($color: #535353, $alpha: 1.0);
             font-size: .8rem;
         }
-
     }
-
-
 }
 
