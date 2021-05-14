@@ -3,14 +3,14 @@ const SET_LANGUAGE = 'SET_LANGUAGE';
 const SET_LOADING = 'SET_LOADING';
 
 // ACTIONS
-function language(payload) {
+function setLanguage(payload) {
   return {
     type: SET_LANGUAGE,
     payload,
   };
 }
 
-function loading(payload) {
+function setLoading(payload) {
   return {
     type: SET_LOADING,
     payload,
@@ -23,8 +23,8 @@ const types = {
 };
 
 const actions = {
-  language,
-  loading,
+  setLanguage,
+  setLoading,
 };
 
 const _global = {
