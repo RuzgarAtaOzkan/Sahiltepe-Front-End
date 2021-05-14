@@ -25,56 +25,121 @@ class Header extends React.Component {
       dropdown: null,
       headerElements: [
         {
-          title: 'Tanitim',
+          title: translate('header.nav.introduction.title'),
           path: '/introduction',
           dropdown: [
-            { title: 'Sahiltepe Hakkında', path: '#about' },
-            { title: 'Resimler', path: '#images' },
-            { title: 'Videolar', path: '#videos' },
+            {
+              title: translate(
+                'header.nav.introduction.dropdown.aboutSahiltepe'
+              ),
+              path: '#about',
+            },
+            {
+              title: translate('header.nav.introduction.dropdown.images'),
+              path: '#images',
+            },
+            {
+              title: translate('header.nav.introduction.dropdown.videos'),
+              path: '#videos',
+            },
           ],
         },
         {
-          title: 'Duyurular',
+          title: translate('header.nav.announcements.title'),
           path: '/announcements',
           dropdown: [
-            { title: 'Kat Malikleri Kurulu', path: '#floor-owners-board' },
-            { title: 'Yönetim Kurulu', path: '#board-of-directors' },
             {
-              title: 'KMK Danışma Kurulu',
+              title: translate(
+                'header.nav.announcements.dropdown.allAnnouncements'
+              ),
+              path: '#all-announcements',
+            },
+            {
+              title: translate(
+                'header.nav.announcements.dropdown.floorOwnersBoard'
+              ),
+              path: '#floor-owners-board',
+            },
+            {
+              title: translate(
+                'header.nav.announcements.dropdown.boardOfDirectors'
+              ),
+              path: '#board-of-directors',
+            },
+            {
+              title: translate(
+                'header.nav.announcements.dropdown.floorOwnersBoardAdvisoryBoard'
+              ),
               path: '#floor-owners-board-advisory-board',
             },
-            { title: 'Tüm Duyurular', path: '#all-announcements' },
           ],
         },
         {
-          title: 'Mevzuat',
-          path: '/legislation',
-          dropdown: [
-            { title: 'Yönetim planı', path: '#managemenet-plan' },
-            { title: 'Kat Mülkiyeti Kanunu', path: '#floor-ownership-law' },
-            { title: 'Medeni Kanun', path: '#civil-law' },
-            {
-              title: 'İstanbul İmar Yönetmeliği',
-              path: '#istanbul-zoning-regulation',
-            },
-            { title: 'İçtihatlar', path: '#jurisprudence' },
-          ],
-        },
-        {
-          title: 'Kararlar',
-          path: '/decisions',
-          dropdown: [
-            { title: 'Kat Malikleri Kurulu', path: '#floor-owners-board' },
-            { title: 'Yönetim Kurulu', path: '#board-of-directors' },
-            { title: 'Tüm kararlar', path: '#all-decisions' },
-          ],
-        },
-        {
-          title: 'Etkinlikler',
+          title: translate('header.nav.events.title'),
           path: '/events',
           dropdown: [
-            { title: 'Oylamalar', path: '#votes' },
-            { title: 'Anketler', path: '#surveys' },
+            {
+              title: translate('header.nav.events.dropdown.votes'),
+              path: '#votes',
+            },
+            {
+              title: translate('header.nav.events.dropdown.surveys'),
+              path: '#surveys',
+            },
+          ],
+        },
+        {
+          title: translate('header.nav.legislation.title'),
+          path: '/legislation',
+          dropdown: [
+            {
+              title: translate(
+                'header.nav.legislation.dropdown.managementPlan'
+              ),
+              path: '#managemenet-plan',
+            },
+            {
+              title: translate(
+                'header.nav.legislation.dropdown.floorOwnershipLaw'
+              ),
+              path: '#floor-ownership-law',
+            },
+            {
+              title: translate('header.nav.legislation.dropdown.civilLaw'),
+              path: '#civil-law',
+            },
+            {
+              title: translate(
+                'header.nav.legislation.dropdown.istanbulZoningRegulation'
+              ),
+              path: '#istanbul-zoning-regulation',
+            },
+            {
+              title: translate('header.nav.legislation.dropdown.jurisprudence'),
+              path: '#jurisprudence',
+            },
+          ],
+        },
+        {
+          title: translate('header.nav.decisions.title'),
+          path: '/decisions',
+          dropdown: [
+            {
+              title: translate(
+                'header.nav.decisions.dropdown.floorOwnersBoard'
+              ),
+              path: '#floor-owners-board',
+            },
+            {
+              title: translate(
+                'header.nav.decisions.dropdown.boardOfDirectors'
+              ),
+              path: '#board-of-directors',
+            },
+            {
+              title: translate('header.nav.decisions.dropdown.allDecisions'),
+              path: '#all-decisions',
+            },
           ],
         },
       ],
@@ -196,7 +261,7 @@ class Header extends React.Component {
                     to="profile"
                     onClick={() => this.setState({ navToggle: false })}
                   >
-                    Hesabim
+                    {translate('header.nav.login.title.authorized')}
                   </Link>
                 </li>
               ) : (
@@ -205,7 +270,7 @@ class Header extends React.Component {
                     to="sign-in"
                     onClick={() => this.setState({ navToggle: false })}
                   >
-                    {translate('header.nav.login.title')}
+                    {translate('header.nav.login.title.normal')}
                   </Link>
                 </li>
               )}

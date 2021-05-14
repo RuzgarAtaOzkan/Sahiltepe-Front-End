@@ -2,7 +2,13 @@
   "title": "Sahiltepe Villalari",
   "nav": {
     "login": {
-      "title": "Giris Yap",
+      "title": {
+        "authorized": "Hesabim",
+        "normal": "Giris Yap"
+      }
+    },
+    "introduction": {
+      "title": "Tanitim",
       "dropdown": {
         "aboutSahiltepe": "Sahiltepe Hakkinda",
         "images": "Resimler",
@@ -10,7 +16,7 @@
       }
     },
     "announcements": {
-      "title": "Duyurular",
+      "title": "Announcements",
       "dropdown": {
         "floorOwnersBoard": "Floor Owners Board",
         "boardOfDirectors": "Board of Directors",

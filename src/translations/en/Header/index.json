@@ -1,51 +1,53 @@
-
-
 {
-    "title": "Sahiltepe Villas",
-    "nav": {
-
-        "login": {
-            "title": "Log in",
-            "dropdown": {
-                "aboutSahiltepe": "About Sahiltepe",
-                "images": "Images",
-                "videos": "Videos"
-            }
-        },
-        "announcements": {
-            "title": "Announcements",
-            "dropdown": {
-                "floorOwnersBoard": "Floor Owners Board",
-                "boardOfDirectors": "Board of Directors",
-                "floorOwnersBoardAdvisoryBoard": "Floor Owners Board Advisory Board",
-                "allAnnouncements": "All Announcements"
-            }
-        },
-        "legislation": {
-            "title": "Legislation",
-            "dropdown": {
-                "managementPlan": "Management Plan",
-                "floorOwnershipLaw": "Floor Ownership Law",
-                "civilLaw": "Civil Law",
-                "istanbulZoningRegulation": "Istanbul Zoning Regulation",
-                "jurisprudence": "Jurisprudence"
-            }
-        },
-        "decisions": {
-            "title": "Decisions",
-            "dropdown": {
-                "floorOwnersBoard": "Floow Owners Board",
-                "boardOfDirectors": "Board of Directors",
-                "allDecisions": "All Decisions"
-            }
-        },
-        "events": {
-            "title": "Events",
-            "dropdown": {
-                "votes": "Votes",
-                "surveys": "Surveys"
-            }
-        }
+  "title": "Sahiltepe Villas",
+  "nav": {
+    "login": {
+      "title": {
+        "authorized": "My Account",
+        "normal": "Log in"
+      }
+    },
+    "introduction": {
+      "title": "Introduction",
+      "dropdown": {
+        "aboutSahiltepe": "About Sahiltepe",
+        "images": "Images",
+        "videos": "Videos"
+      }
+    },
+    "announcements": {
+      "title": "Announcements",
+      "dropdown": {
+        "floorOwnersBoard": "Floor Owners Board",
+        "boardOfDirectors": "Board of Directors",
+        "floorOwnersBoardAdvisoryBoard": "Floor Owners Board Advisory Board",
+        "allAnnouncements": "All Announcements"
+      }
+    },
+    "legislation": {
+      "title": "Legislation",
+      "dropdown": {
+        "managementPlan": "Management Plan",
+        "floorOwnershipLaw": "Floor Ownership Law",
+        "civilLaw": "Civil Law",
+        "istanbulZoningRegulation": "Istanbul Zoning Regulation",
+        "jurisprudence": "Jurisprudence"
+      }
+    },
+    "decisions": {
+      "title": "Decisions",
+      "dropdown": {
+        "floorOwnersBoard": "Floow Owners Board",
+        "boardOfDirectors": "Board of Directors",
+        "allDecisions": "All Decisions"
+      }
+    },
+    "events": {
+      "title": "Events",
+      "dropdown": {
+        "votes": "Votes",
+        "surveys": "Surveys"
+      }
     }
+  }
 }
-
