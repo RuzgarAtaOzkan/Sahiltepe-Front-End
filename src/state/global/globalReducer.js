@@ -1,32 +1,30 @@
-
 // TYPES
 import globalActions from './globalActions';
 
 const { types } = globalActions;
 
 const initialValue = {
-    lang: null,
-    loading: false
-}
+  language: 'tr',
+  loading: false,
+};
 
 function globalReducer(state = initialValue, action) {
-    switch (action.type) {
+  switch (action.type) {
+    case types.SET_LANGUAGE:
+      return {
+        ...state,
+        language: action.payload,
+      };
 
-        case types.SET_LANG:
-            return {
-                ...state,
-                lang: action.payload
-            }
+    case types.SET_LOADING:
+      return {
+        ...state,
+        loading: action.payload,
+      };
 
-        case types.SET_LOADING:
-        return {
-            ...state,
-            loading: action.payload
-        }
-    
-        default:
-            return state;
-    }
+    default:
+      return state;
+  }
 }
 
 export default globalReducer;

@@ -1,6 +1,6 @@
-
 // MODULES
 import React from 'react';
+import { connect } from 'react-redux';
 
 // ICONS
 import { AiOutlineLoading } from 'react-icons/ai';
@@ -8,76 +8,64 @@ import { AiOutlineLoading } from 'react-icons/ai';
 import './Loading.scss';
 
 class Loading extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
+  constructor(props) {
+    super(props);
+    this.state = {
+      pageY: window.pageYOffset,
+    };
 
-        this.blur = React.createRef();
+    this.blur = React.createRef();
 
-        this.blurIntervalId = 0;
+    this.onScroll = this.onScroll.bind(this);
+  }
 
-        this.onScroll = this.onScroll.bind(this);
+  onScroll() {
+    try {
+      if (this.props.loading) {
+        window.scrollTo(0, this.state.pageY);
+      } else {
+        this.setState({ pageY: window.pageYOffset });
+      }
+
+      this.blur.current.style.top = window.pageYOffset + 'px';
+    } catch (error) {
+      console.log(error);
     }
+  }
 
-    displayBlur(loading) {
-        if (!loading) {
-            return null;
-        }
+  componentDidMount() {
+    window.addEventListener('scroll', this.onScroll);
+  }
 
-        let blur = .5;
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+  }
 
-        this.blurIntervalId = setInterval(() => {
-            blur = blur + .5;
-
-            if (blur > 4) {
-                return clearInterval(this.blurIntervalId);
-            }
-
-            if (this.blur.current) {
-                this.blur.current.style.backdropFilter = `blur(${blur}px)`;
-            }
-            
-        }, 100);
-
-        return (
-            
-            <div 
-                className="blur"
-                style={{ top: window.pageYOffset }}
-                ref={this.blur}
-            >
-                <AiOutlineLoading />
-            </div>
-        );
-    }
-
-    onScroll(e) {
-
-        try {
-            this.blur.current.style.top = window.pageYOffset + 'px';
-        } catch (error) {
-            
-        }
-
-    }
-
-    componentDidMount() {
-        window.addEventListener('scroll', this.onScroll);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.onScroll);
-    }
-
-    render() {
-        return (
-            <>
-                {this.displayBlur(this.props.loading)}
-            </>
-        );
-    }
+  render() {
+    return (
+      <div
+        className={this.props.loading ? 'blur active-blur' : 'blur'}
+        style={{ top: window.pageYOffset }}
+        ref={this.blur}
+      >
+        <AiOutlineLoading />
+      </div>
+    );
+  }
 }
 
-export default Loading;
+function mapStateToProps(state) {
+  return {
+    loading: state.global.loading,
+  };
+}
 
+function mapDispatchToProps(dispatch) {
+  return {
+    setLoading: (payload) => {
+      dispatch({ type: 'SET_LOADING', payload });
+    },
+  };
+}
 
+export default connect(mapStateToProps, mapDispatchToProps)(Loading);

@@ -1,0 +1,47 @@
+{
+  "title": "Sahiltepe Villalari",
+  "nav": {
+    "login": {
+      "title": "Giris Yap",
+      "dropdown": {
+        "aboutSahiltepe": "Sahiltepe Hakkinda",
+        "images": "Resimler",
+        "videos": "Videolar"
+      }
+    },
+    "announcements": {
+      "title": "Duyurular",
+      "dropdown": {
+        "floorOwnersBoard": "Floor Owners Board",
+        "boardOfDirectors": "Board of Directors",
+        "floorOwnersBoardAdvisoryBoard": "Floor Owners Board Advisory Board",
+        "allAnnouncements": "All Announcements"
+      }
+    },
+    "legislation": {
+      "title": "Legislation",
+      "dropdown": {
+        "managementPlan": "Management Plan",
+        "floorOwnershipLaw": "Floor Ownership Law",
+        "civilLaw": "Civil Law",
+        "istanbulZoningRegulation": "Istanbul Zoning Regulation",
+        "jurisprudence": "Jurisprudence"
+      }
+    },
+    "decisions": {
+      "title": "Decisions",
+      "dropdown": {
+        "floorOwnersBoard": "Floow Owners Board",
+        "boardOfDirectors": "Board of Directors",
+        "allDecisions": "All Decisions"
+      }
+    },
+    "events": {
+      "title": "Events",
+      "dropdown": {
+        "votes": "Votes",
+        "surveys": "Surveys"
+      }
+    }
+  }
+}
