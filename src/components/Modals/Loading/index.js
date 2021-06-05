@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 // ICONS
 import { AiOutlineLoading } from 'react-icons/ai';
 
-import './Loading.scss';
+import styles from './Loading.module.scss';
 
 class Loading extends React.Component {
   constructor(props) {
@@ -34,22 +34,38 @@ class Loading extends React.Component {
   }
 
   componentDidMount() {
+    if (this.blur.current) {
+      this.blur.current.style.top = window.pageYOffset + 'px';
+    }
+
     window.addEventListener('scroll', this.onScroll);
   }
 
   componentWillUnmount() {
+    if (this.blur.current) {
+      this.blur.current.style.top = window.pageYOffset + 'px';
+    }
     window.removeEventListener('scroll', this.onScroll);
   }
 
   render() {
+    if (this.blur.current) {
+      this.blur.current.style.top = window.pageYOffset + 'px';
+    }
+
     return (
-      <div
-        className={this.props.loading ? 'blur active-blur' : 'blur'}
-        style={{ top: window.pageYOffset }}
-        ref={this.blur}
-      >
-        <AiOutlineLoading />
-      </div>
+      <>
+        <div
+          className={
+            this.props.loading
+              ? `${styles.blur} ${styles.active}`
+              : `${styles.blur}`
+          }
+          ref={this.blur}
+        >
+          <AiOutlineLoading />
+        </div>
+      </>
     );
   }
 }

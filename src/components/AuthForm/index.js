@@ -3,6 +3,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+// ACTIONS
+import globalState from '../../state/global/globalActions';
+
 // STYLES
 import './AuthForm.scss';
 
@@ -21,7 +24,9 @@ class AuthForm extends React.Component {
     this.onSignUp = this.onSignUp.bind(this);
   }
 
-  onSignIn() {}
+  onSignIn() {
+    this.props.setLoading(true);
+  }
 
   onSignUp() {}
 
@@ -149,7 +154,11 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return {};
+  return {
+    setLoading: (payload) => {
+      dispatch(globalState.actions.setLoading(payload));
+    },
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AuthForm);

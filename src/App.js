@@ -1,5 +1,5 @@
 // MODULES
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
@@ -22,9 +22,9 @@ function App() {
     <Provider store={store}>
       <Router>
         <Header />
-        <LoadingModal />
         <Routes />
         <Footer />
+        <LoadingModal />
       </Router>
     </Provider>
   );

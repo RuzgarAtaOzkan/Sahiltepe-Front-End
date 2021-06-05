@@ -267,7 +267,7 @@ class Header extends React.Component {
               ) : (
                 <li>
                   <Link
-                    to="sign-in"
+                    to="signin"
                     onClick={() => this.setState({ navToggle: false })}
                   >
                     {translate('header.nav.login.title.normal')}
