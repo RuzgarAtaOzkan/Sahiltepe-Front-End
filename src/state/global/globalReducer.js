@@ -4,7 +4,7 @@ import globalActions from './globalActions';
 const { types } = globalActions;
 
 const initialValue = {
-  language: 'en',
+  language: 'tr',
   loading: false,
 };
 

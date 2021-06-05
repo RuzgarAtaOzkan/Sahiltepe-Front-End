@@ -12,19 +12,19 @@ class Introduction extends React.Component {
         // temporary api
         {
           title: 'Lorem Ipsum Dolor Sit Amet',
-          img: 'https://images.pexels.com/photos/7121329/pexels-photo-7121329.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+          img: 'https://i.pinimg.com/564x/3b/de/80/3bde803b531202e6687c86c844447901.jpg',
         },
         {
           title: 'Lorem Ipsum Dolor Sit Amet',
-          img: 'https://images.pexels.com/photos/7121329/pexels-photo-7121329.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+          img: 'https://i.pinimg.com/564x/3b/de/80/3bde803b531202e6687c86c844447901.jpg',
         },
         {
           title: 'Lorem Ipsum Dolor Sit Amet',
-          img: 'https://images.pexels.com/photos/7121329/pexels-photo-7121329.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+          img: 'https://i.pinimg.com/564x/3b/de/80/3bde803b531202e6687c86c844447901.jpg',
         },
         {
           title: 'Lorem Ipsum Dolor Sit Amet',
-          img: 'https://images.pexels.com/photos/7121329/pexels-photo-7121329.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+          img: 'https://i.pinimg.com/564x/3b/de/80/3bde803b531202e6687c86c844447901.jpg',
         },
       ],
       introTriggerOffset: 0,
