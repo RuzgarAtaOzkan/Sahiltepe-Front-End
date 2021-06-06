@@ -2,8 +2,8 @@
 import { combineReducers, createStore } from 'redux';
 
 // REDUCERS
-import globalReducer from './global/globalReducer';
-import userReducer from './user/userReducer';
+import globalReducer from './global/reducer';
+import userReducer from './user/reducer';
 
 // global state
 const rootReducer = combineReducers({

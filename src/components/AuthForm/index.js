@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 // ACTIONS
-import globalState from '../../state/global/globalActions';
+import globalActions from '../../state/global/actions';
 
 // STYLES
 import './AuthForm.scss';
@@ -35,7 +35,7 @@ class AuthForm extends React.Component {
       <>
         <div className="form">
           <h2>
-            <Link to="/sign-up">Don't have an account?</Link>
+            <Link to="/signup">Don't have an account?</Link>
           </h2>
 
           <input
@@ -156,7 +156,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     setLoading: (payload) => {
-      dispatch(globalState.actions.setLoading(payload));
+      dispatch(globalActions.setLoading(payload));
     },
   };
 }

@@ -16,37 +16,37 @@
       }
     },
     "announcements": {
-      "title": "Announcements",
+      "title": "Duyurular",
       "dropdown": {
-        "floorOwnersBoard": "Floor Owners Board",
-        "boardOfDirectors": "Board of Directors",
-        "floorOwnersBoardAdvisoryBoard": "Floor Owners Board Advisory Board",
-        "allAnnouncements": "All Announcements"
+        "floorOwnersBoard": "Kat Sahipleri Kurulu",
+        "boardOfDirectors": "Yönetim Kurulu",
+        "floorOwnersBoardAdvisoryBoard": "Kat Malikleri Kurulu Danışma Kurulu",
+        "allAnnouncements": "Tüm Duyurular"
       }
     },
     "legislation": {
-      "title": "Legislation",
+      "title": "Mevzuat",
       "dropdown": {
-        "managementPlan": "Management Plan",
-        "floorOwnershipLaw": "Floor Ownership Law",
-        "civilLaw": "Civil Law",
-        "istanbulZoningRegulation": "Istanbul Zoning Regulation",
-        "jurisprudence": "Jurisprudence"
+        "managementPlan": "Yönetim planı",
+        "floorOwnershipLaw": "Kat Mülkiyeti Hukuku",
+        "civilLaw": "Sivil yasa",
+        "istanbulZoningRegulation": "İstanbul İmar Yönetmeliği",
+        "jurisprudence": "hukuk"
       }
     },
     "decisions": {
-      "title": "Decisions",
+      "title": "Kararlar",
       "dropdown": {
-        "floorOwnersBoard": "Floow Owners Board",
-        "boardOfDirectors": "Board of Directors",
-        "allDecisions": "All Decisions"
+        "floorOwnersBoard": "Sahipler Panosunu Takip Edin",
+        "boardOfDirectors": "Yönetim Kurulu",
+        "allDecisions": "Tüm Kararlar"
       }
     },
     "events": {
-      "title": "Events",
+      "title": "Etkinlikler",
       "dropdown": {
-        "votes": "Votes",
-        "surveys": "Surveys"
+        "votes": "Oylar",
+        "surveys": "Anketler"
       }
     }
   }

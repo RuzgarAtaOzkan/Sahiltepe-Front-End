@@ -15,7 +15,7 @@ import Routes from './routes/Routes';
 import store from './state/store';
 
 // STYLES
-import './styles/App.scss';
+import './styles/index.scss';
 
 function App() {
   return (

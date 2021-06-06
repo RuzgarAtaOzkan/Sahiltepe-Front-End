@@ -1,11 +1,14 @@
+// MODULES
 import React, { Suspense, lazy } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-// PAGES
-import LoadingPage from '../pages/Loading';
-const HomePage = lazy(() => import('../pages/Home'));
-const SignInPage = lazy(() => import('../pages/SignIn'));
-const SignUpPage = lazy(() => import('../pages/SignUp'));
+// COMPONENTS
+import LoadingPage from '../components/Loading';
+
+// LAZY IMPORTS
+const HomePage = lazy(() => import('../pages/Home.js'));
+const SignInPage = lazy(() => import('../pages/Signin.js'));
+const SignUpPage = lazy(() => import('../pages/Signup.js'));
 
 function Routes() {
   return (

@@ -1,7 +1,5 @@
 // TYPES
-import globalActions from './globalActions';
-
-const { types } = globalActions;
+import types from './types';
 
 const initialValue = {
   language: 'tr',

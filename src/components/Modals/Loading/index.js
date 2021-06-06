@@ -2,6 +2,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+// ACTIONS
+import globalActions from '../../../state/global/actions';
+
 // ICONS
 import { AiOutlineLoading } from 'react-icons/ai';
 
@@ -79,7 +82,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     setLoading: (payload) => {
-      dispatch({ type: 'SET_LOADING', payload });
+      dispatch(globalActions.setLoading(payload));
     },
   };
 }

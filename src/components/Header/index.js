@@ -12,7 +12,7 @@ import { FaSearch } from 'react-icons/fa';
 import { CgClose } from 'react-icons/cg';
 
 // STYLES
-import './Header.scss';
+import styles from './Header.module.scss';
 
 class Header extends React.Component {
   constructor(props) {
@@ -190,7 +190,7 @@ class Header extends React.Component {
     }
 
     return (
-      <ul className="dropdown">
+      <ul className={styles['dropdown']}>
         {dropdownToRender?.dropdown?.map((item, index) => {
           return (
             <li key={index} onClick={() => this.setState({ navToggle: false })}>
@@ -240,21 +240,24 @@ class Header extends React.Component {
     return (
       <>
         <header>
-          <nav className={this.state.headerScrolled ? 'scrolled' : ''}>
+          <nav className={this.state.headerScrolled ? styles['scrolled'] : ''}>
             <h1>
               <Link to="/">{translate('header.title')}</Link>
             </h1>
 
             {this.state.navToggle ? (
-              <CgClose id="nav-close" onClick={this.onHamburgerClick} />
+              <CgClose
+                id={styles['nav-close']}
+                onClick={this.onHamburgerClick}
+              />
             ) : (
               <GiHamburgerMenu
-                id="nav-hamburger"
+                id={styles['nav-hamburger']}
                 onClick={this.onHamburgerClick}
               />
             )}
 
-            <ul className={this.state.navToggle ? 'active' : ''}>
+            <ul className={this.state.navToggle ? styles['active'] : ''}>
               {this.props.user ? (
                 <li>
                   <Link
@@ -278,7 +281,7 @@ class Header extends React.Component {
               {this.renderHeaderElements(this.state.headerElements)}
 
               <li>
-                <div id="search">
+                <div id={styles['search']}>
                   <input
                     type="text"
                     value={this.state.searchTerm}
@@ -286,10 +289,10 @@ class Header extends React.Component {
                       this.setState({ searchTerm: e.target.value })
                     }
                     placeholder="Search..."
-                    className={this.state.searchToggle ? 'active' : ''}
+                    className={this.state.searchToggle ? styles['active'] : ''}
                   />
 
-                  <FaSearch id="icon" onClick={this.onSearchClick} />
+                  <FaSearch id={styles['icon']} onClick={this.onSearchClick} />
                 </div>
               </li>
             </ul>

@@ -2,10 +2,9 @@
 import React from 'react';
 
 // COMPONENTS
-import Parallax from './components/Parallax';
-import Introduction from './components/Introduction';
+import AuthForm from '../components/AuthForm';
 
-class Home extends React.Component {
+class SignIn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -15,14 +14,15 @@ class Home extends React.Component {
     window.scrollTo(0, 0);
   }
 
+  componentWillUnmount() {}
+
   render() {
     return (
       <>
-        <Parallax />
-        <Introduction />
+        <AuthForm formType="signin" />
       </>
     );
   }
 }
 
-export default Home;
+export default SignIn;

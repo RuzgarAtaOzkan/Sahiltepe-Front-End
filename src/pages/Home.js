@@ -1,10 +1,10 @@
 // MODULES
 import React from 'react';
 
-// STYLES
-import './Introduction.scss';
+// COMPONENTS
+import Parallax from '../components/Parallax';
 
-class Introduction extends React.Component {
+class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -83,6 +83,7 @@ class Introduction extends React.Component {
   render() {
     return (
       <>
+        <Parallax />
         <section id="introduction">
           <div className="shadow" />
 
@@ -104,4 +105,4 @@ class Introduction extends React.Component {
   }
 }
 
-export default Introduction;
+export default Home;

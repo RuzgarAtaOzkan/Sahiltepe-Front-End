@@ -1,11 +1,11 @@
 // NODE MODULES
-import React from 'react';
+import React, { Suspense } from 'react';
 
 // SVG ICONS
 import { TiArrowSortedDown } from 'react-icons/ti';
 
 // STYLES
-import './Parallax.scss';
+import styles from './Parallax.module.scss';
 
 class Parallax extends React.Component {
   constructor(props) {
@@ -57,47 +57,47 @@ class Parallax extends React.Component {
 
   render() {
     return (
-      <section id="parallax">
-        <div className="title">
+      <section id={styles['parallax']}>
+        <div className={styles['title']}>
           <h1>Sahiltepe Villaları</h1>
           <h2>Cennete Açılan Yeni Bir Kapı</h2>
         </div>
 
-        <div className="explore" onClick={this.explore}>
+        <div className={styles['explore']} onClick={this.explore}>
           <h2>Explore</h2>
-          <TiArrowSortedDown id="down-arrow" />
+          <TiArrowSortedDown id={styles['down-arrow']} />
         </div>
 
-        <div className="shadow" ref={this.shadow} />
+        <div className={styles['shadow']} ref={this.shadow} />
 
-        <div className="images">
+        <div className={styles['images']}>
           <img
             ref={this.mountain3}
-            id="mountain3"
+            id={styles['mountain3']}
             src="/assets/media/parallax-mountain3.png"
             alt="Mountain"
           />
           <img
             ref={this.mountain2}
-            id="mountain2"
+            id={styles['mountain2']}
             src="/assets/media/parallax-mountain2.png"
             alt="Mountain"
           />
           <img
             ref={this.mountain1}
-            id="mountain1"
+            id={styles['mountain1']}
             src="/assets/media/parallax-mountain1.png"
             alt="Mountain"
           />
           <img
             ref={this.mountain}
-            id="mountain"
+            id={styles['mountain']}
             src="/assets/media/parallax-mountain.png"
             alt="Cliff"
           />
         </div>
 
-        <div className="blend" />
+        <div className={styles['blend']} />
       </section>
     );
   }

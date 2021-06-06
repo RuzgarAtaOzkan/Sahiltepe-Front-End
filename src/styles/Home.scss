@@ -1,0 +1,177 @@
+main {
+  #parallax {
+    .title {
+      z-index: 10;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      text-align: center;
+
+      h1 {
+        color: white;
+        font-size: 4rem;
+        font-family: 'Dancing Script', cursive;
+        font-weight: 700;
+      }
+
+      h2 {
+        color: white;
+        font-family: 'Dancing Script', cursive;
+        font-weight: 700;
+      }
+    }
+
+    .shadow {
+      height: 200px;
+      z-index: 10;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      background: linear-gradient(to top, #151515, transparent);
+    }
+
+    .images {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba($color: #000000, $alpha: 1);
+
+      img {
+        position: absolute;
+        top: 0;
+      }
+
+      #mountain3 {
+        opacity: 0.8;
+        right: 0;
+      }
+
+      #mountain2 {
+        right: 0;
+      }
+
+      #mountain1 {
+        right: 0;
+      }
+
+      #mountain {
+        right: 0;
+      }
+    }
+
+    .blend {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color: black, $alpha: 0);
+      mix-blend-mode: overlay;
+    }
+
+    .explore {
+      color: white;
+      position: absolute;
+      z-index: 100;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      bottom: 5%;
+      cursor: pointer;
+
+      #down-arrow {
+        margin: 0.5rem 0rem;
+        font-size: 2rem;
+      }
+    }
+  }
+
+  #introduction {
+    position: relative;
+    padding: 12rem 0rem;
+
+    .shadow {
+      height: 300px;
+      z-index: 10;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      background: linear-gradient(to bottom, #151515, transparent);
+    }
+
+    .sunset {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(127, 189, 247);
+      mix-blend-mode: overlay;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .boxes {
+      padding-top: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      color: white;
+      transition: all 0.2s ease-out;
+
+      @media only screen and (max-width: 900px) {
+      }
+
+      .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        transition: all 0.2s ease-out;
+        margin: 1rem 1rem;
+        width: 400px;
+        z-index: 100;
+        transition: all 0.5s ease-out;
+
+        img {
+          width: 300px !important;
+          border-radius: 10px;
+        }
+
+        h2 {
+          margin-top: 1rem;
+          width: 300px;
+        }
+      }
+
+      .triggered {
+        opacity: 1;
+      }
+    }
+  }
+}
