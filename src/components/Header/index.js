@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import cn from 'classnames';
 
 // Translate
 import translate from '../../translations/translate';
@@ -161,8 +162,10 @@ class Header extends React.Component {
   }
 
   onMouseHeader(e) {
-    const pathname = e.target.pathname.replace('/', '');
-    this.setState({ dropdown: pathname });
+    if (e && e.target) {
+      const pathname = e?.target?.pathname?.replace('/', '');
+      this.setState({ dropdown: pathname });
+    }
   }
 
   handleScroll() {
@@ -177,7 +180,7 @@ class Header extends React.Component {
       return null;
     }
 
-    const dropdownToRender = this.state.headerElements.find((item, index) => {
+    const headerElement = this.state.headerElements.find((item, index) => {
       if ((item && item.path.replace('/', '')) === this.state.dropdown) {
         return item;
       } else {
@@ -185,18 +188,16 @@ class Header extends React.Component {
       }
     });
 
-    if (!dropdownToRender || !dropdownToRender.dropdown) {
+    if (!headerElement || !headerElement.dropdown) {
       return null;
     }
 
     return (
-      <ul className={styles['dropdown']}>
-        {dropdownToRender?.dropdown?.map((item, index) => {
+      <ul className={cn(styles['dropdown'], styles['active'])}>
+        {headerElement?.dropdown?.map((item, index) => {
           return (
             <li key={index} onClick={() => this.setState({ navToggle: false })}>
-              <Link to={`${dropdownToRender.path}${item.path}`}>
-                {item.title}
-              </Link>
+              <Link to={`${headerElement.path}${item.path}`}>{item.title}</Link>
             </li>
           );
         })}
@@ -215,9 +216,19 @@ class Header extends React.Component {
       return (
         <li
           key={index}
-          onClick={() => this.setState({ navToggle: false })}
-          onMouseEnter={this.onMouseHeader}
-          onMouseLeave={() => this.setState({ dropdown: null })}
+          onClick={(e) => {
+            this.onMouseHeader(e);
+          }}
+          onMouseEnter={(e) => {
+            if (window.innerWidth > 900) {
+              this.onMouseHeader(e);
+            }
+          }}
+          onMouseLeave={() => {
+            if (window.innerWidth > 900) {
+              this.setState({ dropdown: null });
+            }
+          }}
         >
           <Link to={item.path}>{item.title}</Link>
           {this.renderDropdown(dropdown)}

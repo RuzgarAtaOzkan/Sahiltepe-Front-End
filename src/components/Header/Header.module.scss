@@ -13,7 +13,7 @@ header {
     transition: all 0.3s ease-out;
 
     h1 {
-      z-index: 110;
+      z-index: 100;
       transition: all 0.2s ease-out;
       font-family: 'Dancing Script', cursive;
       font-weight: 700;
@@ -71,12 +71,13 @@ header {
         left: -100%;
         flex-direction: column;
         background-color: white;
+        z-index: 900;
       }
 
       li {
         @media only screen and (max-width: 900px) {
           width: 100%;
-          margin-top: 0.9rem;
+          margin-top: 0.8rem;
         }
 
         a {
@@ -106,17 +107,32 @@ header {
           position: absolute;
           display: flex;
           align-items: center;
+          justify-content: center;
           flex-direction: column;
           background-color: rgba(41, 41, 41, 0.9);
+          transition: all 0.2s ease-out;
+          top: auto;
+          left: auto;
+
+          @media only screen and (max-width: 900px) {
+            background-color: rgba(75, 75, 75, 0.9);
+            position: relative;
+            top: 0;
+            left: 0;
+            -moz-box-shadow: inset 0 0 15px #000000;
+            -webkit-box-shadow: inset 0 0 15px #000000;
+            box-shadow: inset 0 0 15px #000000;
+            height: auto;
+          }
 
           li {
             width: 100%;
-
             a {
               display: block;
 
               @media only screen and (max-width: 900px) {
                 color: white;
+                font-size: 1.5rem;
               }
             }
           }

@@ -18,9 +18,9 @@
     "announcements": {
       "title": "Duyurular",
       "dropdown": {
-        "floorOwnersBoard": "Kat Sahipleri Kurulu",
+        "floorOwnersBoard": "Kat Malikleri Kurulu",
         "boardOfDirectors": "Yönetim Kurulu",
-        "floorOwnersBoardAdvisoryBoard": "Kat Malikleri Kurulu Danışma Kurulu",
+        "floorOwnersBoardAdvisoryBoard": "KMK Danışma Kurulu",
         "allAnnouncements": "Tüm Duyurular"
       }
     },
@@ -29,15 +29,15 @@
       "dropdown": {
         "managementPlan": "Yönetim planı",
         "floorOwnershipLaw": "Kat Mülkiyeti Hukuku",
-        "civilLaw": "Sivil yasa",
+        "civilLaw": "Medeni Kanun",
         "istanbulZoningRegulation": "İstanbul İmar Yönetmeliği",
-        "jurisprudence": "hukuk"
+        "jurisprudence": "İçtihatlar"
       }
     },
     "decisions": {
       "title": "Kararlar",
       "dropdown": {
-        "floorOwnersBoard": "Sahipler Panosunu Takip Edin",
+        "floorOwnersBoard": "Kat Malikleri Kurulu",
         "boardOfDirectors": "Yönetim Kurulu",
         "allDecisions": "Tüm Kararlar"
       }
