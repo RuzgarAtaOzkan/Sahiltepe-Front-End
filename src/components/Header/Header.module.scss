@@ -12,6 +12,10 @@ header {
     padding: 3rem 4rem;
     transition: all 0.3s ease-out;
 
+    @media only screen and (max-width: 900px) {
+      padding: 3rem 2rem;
+    }
+
     h1 {
       z-index: 100;
       transition: all 0.2s ease-out;
@@ -19,7 +23,7 @@ header {
       font-weight: 700;
 
       @media only screen and (max-width: 900px) {
-        width: 60%;
+        width: auto;
       }
 
       a {
@@ -64,6 +68,7 @@ header {
       transition: all 0.3s ease-out;
 
       @media only screen and (max-width: 900px) {
+        overflow-y: scroll;
         position: fixed;
         width: 100%;
         height: 100%;
@@ -117,7 +122,6 @@ header {
           @media only screen and (max-width: 900px) {
             background-color: rgba(75, 75, 75, 0.9);
             position: relative;
-            top: 0;
             left: 0;
             -moz-box-shadow: inset 0 0 15px #000000;
             -webkit-box-shadow: inset 0 0 15px #000000;
@@ -193,7 +197,7 @@ header {
   }
 
   nav.scrolled {
-    padding: 1.5rem 4rem;
+    padding: 1.5rem 2rem;
     background-color: rgba(41, 41, 41, 0.9);
   }
 }

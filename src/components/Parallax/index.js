@@ -1,5 +1,5 @@
 // NODE MODULES
-import React, { Suspense } from 'react';
+import React from 'react';
 
 // SVG ICONS
 import { TiArrowSortedDown } from 'react-icons/ti';
@@ -38,9 +38,9 @@ class Parallax extends React.Component {
 
     this.shadow.current.style.height = `${200 + windowY * 0.5}px`;
 
-    this.mountain2.current.style.top = `${-windowY * 0.5}px`;
-    this.mountain1.current.style.top = `${-windowY * 0.9}px`;
-    this.mountain.current.style.top = `${-windowY * 1.2}px`;
+    this.mountain2.current.style.top = `${-windowY * 0.3}px`;
+    this.mountain1.current.style.top = `${-windowY * 0.6}px`;
+    this.mountain.current.style.top = `${-windowY * 0.9}px`;
   }
 
   explore() {

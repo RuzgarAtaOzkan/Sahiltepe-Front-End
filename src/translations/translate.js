@@ -1,5 +1,4 @@
-// MODULES
-
+// STORE
 import store from '../state/store';
 
 // ENGLISH

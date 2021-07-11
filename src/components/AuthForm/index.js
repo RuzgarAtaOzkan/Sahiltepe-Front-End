@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-// ACTIONS
+// DISPATCH ACTIONS
 import globalActions from '../../state/global/actions';
 
 // STYLES
@@ -35,7 +35,7 @@ class AuthForm extends React.Component {
       <>
         <div className="form">
           <h2>
-            <Link to="/signup">Don't have an account?</Link>
+            <Link to="/sign-up">Don't have an account?</Link>
           </h2>
 
           <input
@@ -130,7 +130,9 @@ class AuthForm extends React.Component {
     }
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    console.log(this.props.loading);
+  }
 
   componentWillUnmount() {}
 
