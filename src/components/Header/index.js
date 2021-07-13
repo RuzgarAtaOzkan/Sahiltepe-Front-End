@@ -253,7 +253,7 @@ class Header extends React.Component {
         <header>
           <nav className={this.state.headerScrolled ? styles['scrolled'] : ''}>
             <h1>
-              <Link to="/">{translate('header.title')}</Link>
+              <Link to="/">Sahiltepe</Link>
             </h1>
 
             {this.state.navToggle ? (

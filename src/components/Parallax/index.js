@@ -22,6 +22,7 @@ class Parallax extends React.Component {
 
     this.explore = this.explore.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
+    this.handleLoad = this.handleLoad.bind(this);
   }
 
   handleScroll() {
@@ -38,9 +39,21 @@ class Parallax extends React.Component {
 
     this.shadow.current.style.height = `${200 + windowY * 0.5}px`;
 
-    this.mountain2.current.style.top = `${-windowY * 0.3}px`;
-    this.mountain1.current.style.top = `${-windowY * 0.6}px`;
+    this.mountain2.current.style.top = `${-windowY * 0.3 - 20}px`;
+    this.mountain1.current.style.top = `${-windowY * 0.6 - 50}px`;
     this.mountain.current.style.top = `${-windowY * 0.9}px`;
+  }
+
+  handleLoad() {
+    const windowY = window.pageYOffset;
+
+    if (
+      !this.mountain.current ||
+      !this.mountain2.current ||
+      !this.mountain1.current
+    ) {
+      return;
+    }
   }
 
   explore() {
@@ -48,10 +61,12 @@ class Parallax extends React.Component {
   }
 
   componentDidMount() {
+    window.addEventListener('load', this.handleLoad);
     window.addEventListener('scroll', this.handleScroll);
   }
 
   componentWillUnmount() {
+    window.removeEventListener('load', this.handleLoad);
     window.removeEventListener('scroll', this.handleScroll);
   }
 
@@ -59,7 +74,7 @@ class Parallax extends React.Component {
     return (
       <section id={styles['parallax']}>
         <div className={styles['title']}>
-          <h1>Sahiltepe Villaları</h1>
+          <h1>Sahiltepe Villalari</h1>
           <h2>Cennete Açılan Yeni Bir Kapı</h2>
         </div>
 
