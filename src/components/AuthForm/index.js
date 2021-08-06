@@ -35,7 +35,7 @@ class AuthForm extends React.Component {
       <>
         <div className="form">
           <h2>
-            <Link to="/sign-up">Don't have an account?</Link>
+            <Link to="/signup">Don't have an account?</Link>
           </h2>
 
           <input
@@ -71,7 +71,7 @@ class AuthForm extends React.Component {
       <>
         <div className="form">
           <h2>
-            <Link to="/sign-in">have an account?</Link>
+            <Link to="/signin">have an account?</Link>
           </h2>
 
           <input
@@ -130,9 +130,7 @@ class AuthForm extends React.Component {
     }
   }
 
-  componentDidMount() {
-    console.log(this.props.loading);
-  }
+  componentDidMount() {}
 
   componentWillUnmount() {}
 

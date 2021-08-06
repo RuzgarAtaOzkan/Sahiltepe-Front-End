@@ -45,7 +45,7 @@ class Parallax extends React.Component {
   }
 
   handleLoad() {
-    const windowY = window.pageYOffset;
+    //const windowY = window.pageYOffset;
 
     if (
       !this.mountain.current ||

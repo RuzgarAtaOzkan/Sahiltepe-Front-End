@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Melih Firat"
+    },
+    {
+      "id": 2,
+      "name": "Basar Ballioz",
+      "manager_id": 2
+    },
+    {
+      "id": 3,
+      "name": "Ruzgar Ata Ozkan",
+      "manager_id": 1
+    },
+    {
+      "id": 4,
+      "name": "Nisan Gurol",
+      "manager_id": 2
+    },
+    {
+      "id": 5,
+      "name": "Erce Kaan",
+      "manager_id": 2
+    },
+    {
+      "id": 6,
+      "name": "Bugra Ok",
+      "manager_id": 2
+    },
+    {
+      "id": 7,
+      "name": "Oguzhan",
+      "manager_id": 2
+    },
+    {
+      "id": 8,
+      "name": "Yigit",
+      "manager_id": 4
+    },
+    {
+      "id": 9,
+      "name": "Baran",
+      "manager_id": 5
+    },
+
+    {
+      "id": 10,
+      "name": "Ahmet",
+      "manager_id": 5
+    },
+    {
+      "id": 11,
+      "name": "Kemal",
+      "manager_id": 6
+    },
+    {
+      "id": 12,
+      "name": "Sercan",
+      "manager_id": 7
+    }
+  ]
+}

@@ -46,16 +46,16 @@ class Footer extends React.Component {
 
               <ul>
                 <li>
-                  <Link> My Account </Link>
+                  <Link to="#"> My Account </Link>
                 </li>
                 <li>
-                  <Link> Announcements </Link>
+                  <Link to="#"> Announcements </Link>
                 </li>
                 <li>
-                  <Link> Votes </Link>
+                  <Link to="#"> Votes </Link>
                 </li>
                 <li>
-                  <Link> Surveys </Link>
+                  <Link to="#"> Surveys </Link>
                 </li>
               </ul>
             </div>
@@ -64,10 +64,10 @@ class Footer extends React.Component {
 
               <ul>
                 <li>
-                  <Link>Contact Us</Link>
+                  <Link to="#">Contact Us</Link>
                 </li>
                 <li>
-                  <Link>F.A.Q.</Link>
+                  <Link to="#">F.A.Q.</Link>
                 </li>
               </ul>
             </div>
@@ -108,11 +108,11 @@ class Footer extends React.Component {
           </div>
 
           <div className={styles['bottom']}>
-            <Link>Privacy Policy</Link>
+            <Link to="#">Privacy Policy</Link>
             <span> | </span>
-            <Link>Terms & Conditions</Link>
+            <Link to="#">Terms & Conditions</Link>
             <span> | </span>
-            <Link>Cookies</Link>
+            <Link to="#">Cookies</Link>
             <span id={styles['rights']}>
               {' '}
               @ {new Date().getFullYear().toString()} All rights reserved.{' '}

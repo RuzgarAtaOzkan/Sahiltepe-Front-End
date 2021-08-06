@@ -2,10 +2,10 @@
 import store from '../state/store';
 
 // ENGLISH
-import en_header from './en/Header/index.json';
+import en_header from './en/components/Header/index.json';
 
 // TURKISH
-import tr_header from './tr/Header/index.json';
+import tr_header from './tr/components/Header/index.json';
 
 function translate(path) {
   if (typeof path !== 'string') {
@@ -14,24 +14,32 @@ function translate(path) {
 
   const translations = {
     en: {
-      header: en_header,
+      components: {
+        header: en_header,
+      },
     },
     tr: {
-      header: tr_header,
+      components: {
+        header: tr_header,
+      },
     },
   };
 
-  const langCode = store.getState().global.language;
-  const selectedLang = translations[langCode];
-  const paths = path.split('.');
+  try {
+    const langCode = store.getState().global.language;
+    const selectedLang = translations[langCode];
+    const paths = path.split('.');
 
-  let currentTrans = { ...selectedLang };
+    let currentTrans = { ...selectedLang };
 
-  for (let i = 0; i < paths.length; i++) {
-    currentTrans = currentTrans[paths[i]];
+    for (let i = 0; i < paths.length; i++) {
+      currentTrans = currentTrans[paths[i]];
+    }
+
+    return currentTrans;
+  } catch (error) {
+    console.log(error.message);
   }
-
-  return currentTrans;
 }
 
 export default translate;

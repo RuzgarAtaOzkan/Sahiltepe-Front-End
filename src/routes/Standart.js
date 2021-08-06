@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Switch } from 'react-router-dom';
 // COMPONENTS
 import Loading from '../components/Loading';
 import StandartLayout from '../components/Layouts/Standart';
-import LoadingModal from '../components/Modals/Loading';
 
 // LAZY IMPORTS
 const HomePage = lazy(() => import('../pages/Home.js'));
@@ -19,10 +18,9 @@ function StandartRoutes() {
         <Router>
           <Switch>
             <StandartLayout exact path="/" roles={[]} component={HomePage} />
-            <StandartLayout path="/sign-in" roles={[]} component={SignInPage} />
-            <StandartLayout path="/sign-up" roles={[]} component={SignUpPage} />
+            <StandartLayout path="/signin" roles={[]} component={SignInPage} />
+            <StandartLayout path="/signup" roles={[]} component={SignUpPage} />
           </Switch>
-          <LoadingModal />
         </Router>
       </Suspense>
     </>

@@ -26,119 +26,129 @@ class Header extends React.Component {
       dropdown: null,
       headerElements: [
         {
-          title: translate('header.nav.introduction.title'),
+          title: translate('components.header.nav.introduction.title'),
           path: '/introduction',
           dropdown: [
             {
               title: translate(
-                'header.nav.introduction.dropdown.aboutSahiltepe'
+                'components.header.nav.introduction.dropdown.aboutSahiltepe'
               ),
               path: '#about',
             },
             {
-              title: translate('header.nav.introduction.dropdown.images'),
+              title: translate(
+                'components.header.nav.introduction.dropdown.images'
+              ),
               path: '#images',
             },
             {
-              title: translate('header.nav.introduction.dropdown.videos'),
+              title: translate(
+                'components.header.nav.introduction.dropdown.videos'
+              ),
               path: '#videos',
             },
           ],
         },
         {
-          title: translate('header.nav.announcements.title'),
+          title: translate('components.header.nav.announcements.title'),
           path: '/announcements',
           dropdown: [
             {
               title: translate(
-                'header.nav.announcements.dropdown.allAnnouncements'
+                'components.header.nav.announcements.dropdown.allAnnouncements'
               ),
               path: '#all-announcements',
             },
             {
               title: translate(
-                'header.nav.announcements.dropdown.floorOwnersBoard'
+                'components.header.nav.announcements.dropdown.floorOwnersBoard'
               ),
               path: '#floor-owners-board',
             },
             {
               title: translate(
-                'header.nav.announcements.dropdown.boardOfDirectors'
+                'components.header.nav.announcements.dropdown.boardOfDirectors'
               ),
               path: '#board-of-directors',
             },
             {
               title: translate(
-                'header.nav.announcements.dropdown.floorOwnersBoardAdvisoryBoard'
+                'components.header.nav.announcements.dropdown.floorOwnersBoardAdvisoryBoard'
               ),
               path: '#floor-owners-board-advisory-board',
             },
           ],
         },
         {
-          title: translate('header.nav.events.title'),
+          title: translate('components.header.nav.events.title'),
           path: '/events',
           dropdown: [
             {
-              title: translate('header.nav.events.dropdown.votes'),
+              title: translate('components.header.nav.events.dropdown.votes'),
               path: '#votes',
             },
             {
-              title: translate('header.nav.events.dropdown.surveys'),
+              title: translate('components.header.nav.events.dropdown.surveys'),
               path: '#surveys',
             },
           ],
         },
         {
-          title: translate('header.nav.legislation.title'),
+          title: translate('components.header.nav.legislation.title'),
           path: '/legislation',
           dropdown: [
             {
               title: translate(
-                'header.nav.legislation.dropdown.managementPlan'
+                'components.header.nav.legislation.dropdown.managementPlan'
               ),
               path: '#managemenet-plan',
             },
             {
               title: translate(
-                'header.nav.legislation.dropdown.floorOwnershipLaw'
+                'components.header.nav.legislation.dropdown.floorOwnershipLaw'
               ),
               path: '#floor-ownership-law',
             },
             {
-              title: translate('header.nav.legislation.dropdown.civilLaw'),
+              title: translate(
+                'components.header.nav.legislation.dropdown.civilLaw'
+              ),
               path: '#civil-law',
             },
             {
               title: translate(
-                'header.nav.legislation.dropdown.istanbulZoningRegulation'
+                'components.header.nav.legislation.dropdown.istanbulZoningRegulation'
               ),
               path: '#istanbul-zoning-regulation',
             },
             {
-              title: translate('header.nav.legislation.dropdown.jurisprudence'),
+              title: translate(
+                'components.header.nav.legislation.dropdown.jurisprudence'
+              ),
               path: '#jurisprudence',
             },
           ],
         },
         {
-          title: translate('header.nav.decisions.title'),
+          title: translate('components.header.nav.decisions.title'),
           path: '/decisions',
           dropdown: [
             {
               title: translate(
-                'header.nav.decisions.dropdown.floorOwnersBoard'
+                'components.header.nav.decisions.dropdown.floorOwnersBoard'
               ),
               path: '#floor-owners-board',
             },
             {
               title: translate(
-                'header.nav.decisions.dropdown.boardOfDirectors'
+                'components.header.nav.decisions.dropdown.boardOfDirectors'
               ),
               path: '#board-of-directors',
             },
             {
-              title: translate('header.nav.decisions.dropdown.allDecisions'),
+              title: translate(
+                'components.header.nav.decisions.dropdown.allDecisions'
+              ),
               path: '#all-decisions',
             },
           ],
@@ -221,8 +231,8 @@ class Header extends React.Component {
           }}
           onMouseEnter={(e) => {
             if (window.innerWidth > 900) {
-              this.onMouseHeader(e);
             }
+            this.onMouseHeader(e);
           }}
           onMouseLeave={() => {
             if (window.innerWidth > 900) {
@@ -275,16 +285,16 @@ class Header extends React.Component {
                     to="profile"
                     onClick={() => this.setState({ navToggle: false })}
                   >
-                    {translate('header.nav.login.title.authorized')}
+                    {translate('components.header.nav.login.title.authorized')}
                   </Link>
                 </li>
               ) : (
                 <li>
                   <Link
-                    to="sign-in"
+                    to="signin"
                     onClick={() => this.setState({ navToggle: false })}
                   >
-                    {translate('header.nav.login.title.normal')}
+                    {translate('components.header.nav.login.title.normal')}
                   </Link>
                 </li>
               )}
